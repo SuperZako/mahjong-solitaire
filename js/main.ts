@@ -1,3 +1,7 @@
+declare var jQuery: any;
+declare var $: any;
+declare var Howler: any;
+
 var screenfull = {
     request: function (b) {
         window.document.documentElement.webkitRequestFullScreen();
@@ -12,13 +16,13 @@ var screenfull = {
         window.document.webkitExitFullscreen(); // [c.exitFullscreen]()
     },
     toggle: function (a) {
-        this.isFullscreen ? this.exit() : this.request(a);
+        this.isFullscreen ? this.exit() : this.request(a)
     },
     onchange: function (a) {
-        this.on("change", a);
+        this.on("change", a)
     },
     onerror: function (a) {
-        this.on("error", a);
+        this.on("error", a)
     },
     on: function (d, b) {
         // var c = g[d];
@@ -40,28 +44,34 @@ var screenfull = {
         }
     }
 };
+
 var s_iScaleFactor = 1, s_iOffsetX, s_iOffsetY, s_bIsIphone = !1;
 (function (a) {
-    (jQuery.browser = jQuery.browser || {}).mobile = /android|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(ad|hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|symbian|tablet|treo|up\.(browser|link)|vodafone|wap|webos|windows (ce|phone)|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|e\-|e\/|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(di|rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|xda(\-|2|g)|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4));
-})(navigator.userAgent || navigator.vendor /*|| window.opera*/);
+    (jQuery.browser = jQuery.browser || {}).mobile = /android|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(ad|hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|symbian|tablet|treo|up\.(browser|link)|vodafone|wap|webos|windows (ce|phone)|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|e\-|e\/|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(di|rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|xda(\-|2|g)|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))
+}
+)(navigator.userAgent || navigator.vendor /*|| window.opera*/);
 //$(window).resize(function () {
 //    sizeHandler()
 //});
-window.onresize = function () {
-    sizeHandler();
+window.onresize = () => {
+    sizeHandler()
 };
+
 function trace(a) {
-    console.log(a);
+    console.log(a)
 }
 function isIOS() {
     var a = "iPad Simulator;iPhone Simulator;iPod Simulator;iPad;iPhone;iPod".split(";");
     for (-1 !== navigator.userAgent.toLowerCase().indexOf("iphone") && (s_bIsIphone = !0); a.length;)
         if (navigator.platform === a.pop())
             return !0;
-    return s_bIsIphone = !1;
+    return s_bIsIphone = !1
 }
+
 function getSize(a) {
-    var b = a.toLowerCase(), d = window.document, c = d.documentElement;
+    var b = a.toLowerCase()
+        , d = window.document
+        , c = d.documentElement;
     if (void 0 === window["inner" + a])
         a = c["client" + a];
     else if (window["inner" + a] != c["client" + a]) {
@@ -75,23 +85,22 @@ function getSize(a) {
         g.appendChild(e);
         c.insertBefore(g, d.head);
         a = 7 == e["offset" + a] ? c["client" + a] : window["inner" + a];
-        c.removeChild(g);
-    }
-    else
+        c.removeChild(g)
+    } else
         a = window["inner" + a];
-    return a;
+    return a
 }
 window.addEventListener("orientationchange", onOrientationChange);
 function onOrientationChange() {
     window.matchMedia("(orientation: portrait)").matches && sizeHandler();
-    window.matchMedia("(orientation: landscape)").matches && sizeHandler();
+    window.matchMedia("(orientation: landscape)").matches && sizeHandler()
 }
 function getIOSWindowHeight() {
-    return document.documentElement.clientWidth / window.innerWidth * window.innerHeight;
+    return document.documentElement.clientWidth / window.innerWidth * window.innerHeight
 }
 function getHeightOfIOSToolbars() {
     var a = (0 === window.orientation ? screen.height : screen.width) - getIOSWindowHeight();
-    return 1 < a ? a : 0;
+    return 1 < a ? a : 0
 }
 function sizeHandler() {
     window.scrollTo(0, 1);
@@ -99,19 +108,20 @@ function sizeHandler() {
         var a = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? getIOSWindowHeight() : getSize("Height");
         var b = getSize("Width");
         _checkOrientation(b, a);
-        var d = Math.min(a / CANVAS_HEIGHT, b / CANVAS_WIDTH), c = CANVAS_WIDTH * d;
+        var d = Math.min(a / CANVAS_HEIGHT, b / CANVAS_WIDTH)
+            , c = CANVAS_WIDTH * d;
         d *= CANVAS_HEIGHT;
         if (d < a) {
             var g = a - d;
             d += g;
-            c += CANVAS_WIDTH / CANVAS_HEIGHT * g;
-        }
-        else
+            c += CANVAS_WIDTH / CANVAS_HEIGHT * g
+        } else
             c < b && (g = b - c,
                 c += g,
                 d += CANVAS_HEIGHT / CANVAS_WIDTH * g);
         g = a / 2 - d / 2;
-        var e = b / 2 - c / 2, f = CANVAS_WIDTH / c;
+        var e = b / 2 - c / 2
+            , f = CANVAS_WIDTH / c;
         if (e * f < -EDGEBOARD_X || g * f < -EDGEBOARD_Y)
             d = Math.min(a / (CANVAS_HEIGHT - 2 * EDGEBOARD_Y), b / (CANVAS_WIDTH - 2 * EDGEBOARD_X)),
                 c = CANVAS_WIDTH * d,
@@ -126,8 +136,9 @@ function sizeHandler() {
         null !== s_oGame && s_oGame.refreshButtonPos(s_iOffsetX, s_iOffsetY);
         null !== s_oMenu && s_oMenu.refreshButtonPos(s_iOffsetX, s_iOffsetY);
         null !== s_oLevelMenu && s_oLevelMenu.refreshButtonPos(s_iOffsetX, s_iOffsetY);
+
         if (s_bIsIphone) {
-            var canvas = document.getElementById("canvas");
+            let canvas = document.getElementById("canvas");
             s_oStage.canvas.width = 2 * c;
             s_oStage.canvas.height = 2 * d;
             canvas.style.width = c + "px";
@@ -135,59 +146,58 @@ function sizeHandler() {
             a = Math.min(c / CANVAS_WIDTH, d / CANVAS_HEIGHT);
             s_iScaleFactor = 2 * a;
             s_oStage.scaleX = s_oStage.scaleY = 2 * a;
-        }
-        else {
+        } else {
             if (s_bMobile && !1 === isIOS()) {
                 // $("#canvas").css("width", c + "px");
                 // $("#canvas").css("height", d + "px");
-                var canvas = document.getElementById("canvas");
+
+                let canvas = document.getElementById("canvas");
                 canvas.style.width = c + "px";
                 canvas.style.height = d + "px";
-            }
-            else {
+            } else {
                 s_oStage.canvas.width = c;
                 s_oStage.canvas.height = d;
                 s_iScaleFactor = Math.min(c / CANVAS_WIDTH, d / CANVAS_HEIGHT);
                 s_oStage.scaleX = s_oStage.scaleY = s_iScaleFactor;
             }
         }
+
         0 > g ? $("#canvas").css("top", g + "px") : $("#canvas").css("top", "0px");
         $("#canvas").css("left", e + "px");
-        fullscreenHandler();
+        fullscreenHandler()
     }
 }
 function _checkOrientation(a, b) {
     s_bMobile && ENABLE_CHECK_ORIENTATION && (a > b ? "landscape" === $(".orientation-msg-container").attr("data-orientation") ? ($(".orientation-msg-container").css("display", "none"),
         s_oMain.startUpdate()) : ($(".orientation-msg-container").css("display", "block"),
-        s_oMain.stopUpdate()) : "portrait" === $(".orientation-msg-container").attr("data-orientation") ? ($(".orientation-msg-container").css("display", "none"),
-        s_oMain.startUpdate()) : ($(".orientation-msg-container").css("display", "block"),
-        s_oMain.stopUpdate()));
+            s_oMain.stopUpdate()) : "portrait" === $(".orientation-msg-container").attr("data-orientation") ? ($(".orientation-msg-container").css("display", "none"),
+                s_oMain.startUpdate()) : ($(".orientation-msg-container").css("display", "block"),
+                    s_oMain.stopUpdate()))
 }
 function inIframe() {
     try {
-        return window.self !== window.top;
-    }
-    catch (a) {
-        return !0;
+        return window.self !== window.top
+    } catch (a) {
+        return !0
     }
 }
-function createBitmap(a, b, d) {
-    var c = new createjs.Bitmap(a), g = new createjs.Shape;
+function createBitmap(a, b?, d?) {
+    var c = new createjs.Bitmap(a)
+        , g = new createjs.Shape;
     b && d ? g.graphics.beginFill("#fff").drawRect(0, 0, b, d) : g.graphics.beginFill("#ff0").drawRect(0, 0, a.width, a.height);
     c.hitArea = g;
-    return c;
+    return c
 }
 function createSprite(a, b, d, c, g, e) {
     a = null !== b ? new createjs.Sprite(a, b) : new createjs.Sprite(a);
     b = new createjs.Shape;
     b.graphics.beginFill("#000000").drawRect(-d, -c, g, e);
     a.hitArea = b;
-    return a;
+    return a
 }
-function randomFloatBetween(a, b, d) {
-    if (d === void 0) { d = 2; }
+function randomFloatBetween(a: number, b: number, d = 2) {
     // "undefined" === typeof d && (d = 2);
-    return parseFloat(Math.min(a + Math.random() * (b - a), b).toFixed(d));
+    return parseFloat(Math.min(a + Math.random() * (b - a), b).toFixed(d))
 }
 //function shuffle(a) {
 //    for (var b = a.length, d, c; 0 !== b;)
@@ -204,20 +214,20 @@ function formatTime(a) {
     a = parseFloat(String(a - 60 * b)).toFixed(1);
     var d = "";
     d = 10 > b ? d + ("0" + b + ":") : d + (b + ":");
-    return 10 > a ? d + ("0" + a) : d + a;
+    return 10 > a ? d + ("0" + a) : d + a
 }
 function NoClickDelay(a) {
     this.element = a;
-    window.Touch && this.element.addEventListener("touchstart", this, !1);
+    (<any>window).Touch && this.element.addEventListener("touchstart", this, !1)
 }
 function shuffle(a) {
     for (var b = a.length, d, c; 0 < b;)
         c = Math.floor(Math.random() * b),
-            b--,
+            b-- ,
             d = a[b],
             a[b] = a[c],
             a[c] = d;
-    return a;
+    return a
 }
 NoClickDelay.prototype = {
     handleEvent: function (a) {
@@ -229,17 +239,17 @@ NoClickDelay.prototype = {
                 this.onTouchMove(a);
                 break;
             case "touchend":
-                this.onTouchEnd(a);
+                this.onTouchEnd(a)
         }
     },
     onTouchStart: function (a) {
         a.preventDefault();
         this.moved = !1;
         this.element.addEventListener("touchmove", this, !1);
-        this.element.addEventListener("touchend", this, !1);
+        this.element.addEventListener("touchend", this, !1)
     },
     onTouchMove: function (a) {
-        this.moved = !0;
+        this.moved = !0
     },
     onTouchEnd: function (a) {
         this.element.removeEventListener("touchmove", this, !1);
@@ -249,7 +259,7 @@ NoClickDelay.prototype = {
             3 == a.nodeType && (a = a.parentNode);
             var b = document.createEvent("MouseEvents");
             b.initEvent("click", !0, !0);
-            a.dispatchEvent(b);
+            a.dispatchEvent(b)
         }
     }
 };
@@ -265,8 +275,9 @@ NoClickDelay.prototype = {
         };
         a = a || window.event;
         a.type in c ? document.body.className = c[a.type] : (document.body.className = this[b] ? "hidden" : "visible",
-            "hidden" === document.body.className ? s_oMain && s_oMain.stopUpdate() : s_oMain && s_oMain.startUpdate());
+            "hidden" === document.body.className ? s_oMain && s_oMain.stopUpdate() : s_oMain && s_oMain.startUpdate())
     }
+
     var b = "hidden";
     b in document
         ? document.addEventListener("visibilitychange", a)
@@ -279,102 +290,110 @@ NoClickDelay.prototype = {
                     : "onfocusin" in document
                         ? document.onfocusin = document.onfocusout = a
                         : window.onpageshow = window.onpagehide = window.onfocus = window.onblur = a;
-})();
+
+
+
+
+}
+)();
 function ctlArcadeResume() {
-    null !== s_oMain && s_oMain.startUpdate();
+    null !== s_oMain && s_oMain.startUpdate()
 }
 function ctlArcadePause() {
-    null !== s_oMain && s_oMain.stopUpdate();
+    null !== s_oMain && s_oMain.stopUpdate()
 }
-function getParamValue(a) {
+function getParamValue(a: string) {
     for (var b = window.location.search.substring(1).split("&"), d = 0; d < b.length; d++) {
         var c = b[d].split("=");
         if (c[0] == a)
-            return c[1];
+            return c[1]
     }
 }
 function playSound(a, b, d) {
     return !1 === DISABLE_SOUND_MOBILE || !1 === s_bMobile ? (s_aSounds[a].play(),
         s_aSounds[a].volume(b),
         s_aSounds[a].loop(d),
-        s_aSounds[a]) : null;
+        s_aSounds[a]) : null
 }
 function stopSound(a) {
-    !1 !== DISABLE_SOUND_MOBILE && !1 !== s_bMobile || s_aSounds[a].stop();
+    !1 !== DISABLE_SOUND_MOBILE && !1 !== s_bMobile || s_aSounds[a].stop()
 }
 function setVolume(a, b) {
-    !1 !== DISABLE_SOUND_MOBILE && !1 !== s_bMobile || s_aSounds[a].volume(b);
+    !1 !== DISABLE_SOUND_MOBILE && !1 !== s_bMobile || s_aSounds[a].volume(b)
 }
 function setMute(a, b) {
-    !1 !== DISABLE_SOUND_MOBILE && !1 !== s_bMobile || s_aSounds[a].mute(b);
+    !1 !== DISABLE_SOUND_MOBILE && !1 !== s_bMobile || s_aSounds[a].mute(b)
 }
 function saveItem(a, b) {
-    s_bStorageAvailable && localStorage.setItem(a, b);
+    s_bStorageAvailable && localStorage.setItem(a, b)
 }
 function getItem(a) {
-    return s_bStorageAvailable ? localStorage.getItem(a) : null;
+    return s_bStorageAvailable ? localStorage.getItem(a) : null
 }
 function fullscreenHandler() {
     ENABLE_FULLSCREEN && !1 !== window.document.webkitFullscreenEnabled && (s_bFullscreen = screen.height < window.innerHeight + 3 && screen.height > window.innerHeight - 3 ? !0 : !1,
         null !== s_oInterface && s_oInterface.resetFullscreenBut(),
         null !== s_oMenu && s_oMenu.resetFullscreenBut(),
-        null !== s_oLevelMenu && s_oLevelMenu.resetFullscreenBut());
+        null !== s_oLevelMenu && s_oLevelMenu.resetFullscreenBut())
 }
 if (window.document.webkitFullscreenEnabled)
     screenfull.on("change", function () {
         s_bFullscreen = !!window.document.webkitFullscreenElement;
         null !== s_oInterface && s_oInterface.resetFullscreenBut();
         null !== s_oMenu && s_oMenu.resetFullscreenBut();
-        null !== s_oLevelMenu && s_oLevelMenu.resetFullscreenBut();
+        null !== s_oLevelMenu && s_oLevelMenu.resetFullscreenBut()
     });
 function extractHostname(a) {
     a = -1 < a.indexOf("://") ? a.split("/")[2] : a.split("/")[0];
     a = a.split(":")[0];
-    return a = a.split("?")[0];
+    return a = a.split("?")[0]
 }
 function extractRootDomain(a) {
     a = extractHostname(a);
-    var b = a.split("."), d = b.length;
+    var b = a.split(".")
+        , d = b.length;
     2 < d && (a = b[d - 2] + "." + b[d - 1]);
-    return a;
+    return a
 }
 var getClosestTop = function () {
-    var a = window, b = !1;
+    var a = window
+        , b = !1;
     try {
         for (; a.parent.document !== a.document;)
             if (a.parent.document)
                 a = a.parent;
             else {
                 b = !0;
-                break;
+                break
             }
-    }
-    catch (d) {
-        b = !0;
+    } catch (d) {
+        b = !0
     }
     return {
         topFrame: a,
         err: b
-    };
-}, getBestPageUrl = function (a) {
-    var b = a.topFrame, d = "";
-    if (a.err)
-        try {
+    }
+}
+    , getBestPageUrl = function (a) {
+        var b = a.topFrame
+            , d = "";
+        if (a.err)
             try {
-                d = window.top.location.href;
+                try {
+                    d = window.top.location.href
+                } catch (g) {
+                    var c = window.location.ancestorOrigins;
+                    d = c[c.length - 1]
+                }
+            } catch (g) {
+                d = b.document.referrer
             }
-            catch (g) {
-                var c = window.location.ancestorOrigins;
-                d = c[c.length - 1];
-            }
-        }
-        catch (g) {
-            d = b.document.referrer;
-        }
-    else
-        d = b.location.href;
-    return d;
-}, TOPFRAMEOBJ = getClosestTop(), PAGE_URL = getBestPageUrl(TOPFRAMEOBJ);
+        else
+            d = b.location.href;
+        return d
+    }
+    , TOPFRAMEOBJ = getClosestTop()
+    , PAGE_URL = getBestPageUrl(TOPFRAMEOBJ);
 function seekAndDestroy() {
     return true;
 }
@@ -385,69 +404,76 @@ function CSpriteLibrary() {
         c = f;
         g = k;
         e = h;
-        a = {};
-    };
+        a = {}
+    }
+        ;
     this.addSprite = function (c, d) {
         a.hasOwnProperty(c) || (a[c] = {
             szPath: d,
             oSprite: new Image
         },
-            b++);
-    };
+            b++)
+    }
+        ;
     this.getSprite = function (c) {
-        return a.hasOwnProperty(c) ? a[c].oSprite : null;
-    };
+        return a.hasOwnProperty(c) ? a[c].oSprite : null
+    }
+        ;
     this._onSpritesLoaded = function () {
-        g.call(e);
-    };
+        g.call(e)
+    }
+        ;
     this._onSpriteLoaded = function () {
         c.call(e);
-        ++d === b && this._onSpritesLoaded();
-    };
+        ++d === b && this._onSpritesLoaded()
+    }
+        ;
     this.loadSprites = function () {
         for (var c in a)
             a[c].oSprite.oSpriteLibrary = this,
                 a[c].oSprite.onload = function () {
-                    this.oSpriteLibrary._onSpriteLoaded();
+                    this.oSpriteLibrary._onSpriteLoaded()
                 }
                 ,
-                    a[c].oSprite.src = a[c].szPath;
-    };
+                a[c].oSprite.src = a[c].szPath
+    }
+        ;
     this.getNumSprites = function () {
-        return b;
-    };
+        return b
+    }
 }
 var CANVAS_WIDTH = 960, CANVAS_HEIGHT = 540, EDGEBOARD_X = 128, EDGEBOARD_Y = 42, FPS_TIME = 1E3 / 24, DISABLE_SOUND_MOBILE = !1, FONT_GAME = "blackplotanregular", STATE_LOADING = 0, STATE_MENU = 1, STATE_HELP = 1, STATE_GAME = 3, ON_MOUSE_DOWN = 0, ON_MOUSE_UP = 1, ON_MOUSE_OVER = 2, ON_MOUSE_OUT = 3, ON_DRAG_START = 4, ON_DRAG_END = 5, ON_MSG_BOX_LEFT_BUT = 6, ON_MSG_BOX_CENTER_BUT = 7, ON_MSG_BOX_RIGHT_BUT = 8, ON_RELEASE_YES = 9, ON_RELEASE_NO = 10, ALERT_FROM_EXIT = 0, ALERT_FROM_RESTART = 1, ALERT_FROM_SHUFFLE = 2, NUM_ROWS_PAGE_LEVEL = 2, NUM_COLS_PAGE_LEVEL = 3, TILE_WIDTH = 60, TILE_HEIGHT = 78, BONUS_TIME, HINT_PENALTY, SCORE_BONUS_LAYOUT = [];
 SCORE_BONUS_LAYOUT.easy = 1;
 SCORE_BONUS_LAYOUT.medium = 2;
 SCORE_BONUS_LAYOUT.hard = 3;
-var ENABLE_FULLSCREEN;
-var ENABLE_CHECK_ORIENTATION;
-var TEXT_GAMEOVER = "GAME OVER";
-var TEXT_CONGRATS = "CONGRATULATIONS";
-var TEXT_SCORE = "SCORE";
-var TEXT_BONUS_TIME = "BONUS TIME";
-var TEXT_SELECT_LEVEL = "SELECT A LEVEL";
-var TEXT_SHUFFLE = "SHUFFLE";
-var TEXT_RESTART = "RESTART";
-var TEXT_HINT = "HINT";
-var TEXT_ALERT_EXIT = "DO YOU REALLY WANT TO EXIT?";
-var TEXT_ALERT_RESTART = "DO YOU REALLY WANT TO RESTART?";
-var TEXT_ALERT_SHUFFLE = "DO YOU REALLY WANT TO SHUFFLE?";
-var TEXT_FINAL_SCORE = "FINAL SCORE";
-var TEXT_BEST_SCORE = "BEST SCORE";
-var TEXT_NO_TILES = "NO MORE TILES SELECTABLE!";
-var TEXT_NO = "NO";
-var TEXT_YES = "YES";
-var TEXT_EXIT = "EXIT";
-var TEXT_ERR_LS = "YOUR WEB BROWSER DOES NOT SUPPORT STORING SETTING LOCALLY. IN SAFARI, THE MOST COMMON CAUSE OF THIS IS USING 'PRIVATE BROWSING MODE'. SOME INFO MAY NOT SAVE OR SOME FEATURE MAY NOT WORK PROPERLY.";
-var TEXT_CREDITS_DEVELOPED = "DEVELOPED BY";
-var TEXT_SHARE_IMAGE = "200x200.jpg";
-var TEXT_SHARE_TITLE = "Congratulations!";
-var TEXT_SHARE_MSG1 = "You collected <strong>";
-var TEXT_SHARE_MSG2 = " points</strong>!<br><br>Share your score with your friends!";
-var TEXT_SHARE_SHARE1 = "My score is ";
-var TEXT_SHARE_SHARE2 = " points! Can you do better";
+let ENABLE_FULLSCREEN;
+let ENABLE_CHECK_ORIENTATION;
+let TEXT_GAMEOVER = "GAME OVER";
+let TEXT_CONGRATS = "CONGRATULATIONS";
+let TEXT_SCORE = "SCORE";
+let TEXT_BONUS_TIME = "BONUS TIME";
+let TEXT_SELECT_LEVEL = "SELECT A LEVEL";
+let TEXT_SHUFFLE = "SHUFFLE";
+let TEXT_RESTART = "RESTART";
+let TEXT_HINT = "HINT";
+let TEXT_ALERT_EXIT = "DO YOU REALLY WANT TO EXIT?";
+let TEXT_ALERT_RESTART = "DO YOU REALLY WANT TO RESTART?";
+let TEXT_ALERT_SHUFFLE = "DO YOU REALLY WANT TO SHUFFLE?";
+let TEXT_FINAL_SCORE = "FINAL SCORE";
+let TEXT_BEST_SCORE = "BEST SCORE";
+let TEXT_NO_TILES = "NO MORE TILES SELECTABLE!";
+let TEXT_NO = "NO";
+let TEXT_YES = "YES";
+let TEXT_EXIT = "EXIT";
+let TEXT_ERR_LS = "YOUR WEB BROWSER DOES NOT SUPPORT STORING SETTING LOCALLY. IN SAFARI, THE MOST COMMON CAUSE OF THIS IS USING 'PRIVATE BROWSING MODE'. SOME INFO MAY NOT SAVE OR SOME FEATURE MAY NOT WORK PROPERLY.";
+let TEXT_CREDITS_DEVELOPED = "DEVELOPED BY";
+let TEXT_SHARE_IMAGE = "200x200.jpg";
+let TEXT_SHARE_TITLE = "Congratulations!";
+let TEXT_SHARE_MSG1 = "You collected <strong>";
+let TEXT_SHARE_MSG2 = " points</strong>!<br><br>Share your score with your friends!";
+let TEXT_SHARE_SHARE1 = "My score is ";
+let TEXT_SHARE_SHARE2 = " points! Can you do better";
+
 function CPreloader() {
     var a, b, d, c, g, e, f;
     this._init = function () {
@@ -456,11 +482,13 @@ function CPreloader() {
         s_oSpriteLibrary.addSprite("progress_bar", "./sprites/progress_bar.png");
         s_oSpriteLibrary.loadSprites();
         f = new createjs.Container;
-        s_oStage.addChild(f);
-    };
+        s_oStage.addChild(f)
+    }
+        ;
     this.unload = function () {
-        f.removeAllChildren();
-    };
+        f.removeAllChildren()
+    }
+        ;
     this.hide = function () {
         var a = this;
         setTimeout(function () {
@@ -468,15 +496,18 @@ function CPreloader() {
                 alpha: 1
             }, 500).call(function () {
                 a.unload();
-                s_oMain.gotoMenu();
-            });
-        }, 1E3);
-    };
-    this._onImagesLoaded = function () { };
+                s_oMain.gotoMenu()
+            })
+        }, 1E3)
+    }
+        ;
+    this._onImagesLoaded = function () { }
+        ;
     this._onAllImagesLoaded = function () {
         this.attachSprites();
-        s_oMain.preloaderReady();
-    };
+        s_oMain.preloaderReady()
+    }
+        ;
     this.attachSprites = function () {
         var k = createBitmap(s_oSpriteLibrary.getSprite("bg_menu"));
         f.addChild(k);
@@ -501,15 +532,17 @@ function CPreloader() {
         e = new createjs.Shape;
         e.graphics.beginFill("black").drawRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         e.alpha = 0;
-        f.addChild(e);
-    };
+        f.addChild(e)
+    }
+        ;
     this.refreshLoader = function (e) {
         d.text = e + "%";
         g.graphics.clear();
         e = Math.floor(e * a / 100);
-        g.graphics.beginFill("rgba(255,255,255,0.01)").drawRect(c.x, c.y, e, b);
-    };
-    this._init();
+        g.graphics.beginFill("rgba(255,255,255,0.01)").drawRect(c.x, c.y, e, b)
+    }
+        ;
+    this._init()
 }
 function CMain(a) {
     var b, d = 0, c = 0, g = STATE_LOADING, e, f;
@@ -524,20 +557,24 @@ function CMain(a) {
         createjs.Ticker.on("tick", this._update);
         navigator.userAgent.match(/Windows Phone/i) && (DISABLE_SOUND_MOBILE = !0);
         s_oSpriteLibrary = new CSpriteLibrary;
-        seekAndDestroy() ? e = new CPreloader : window.location.href = "http://www.codethislab.com/contact-us.html";
-    };
+        seekAndDestroy() ? e = new CPreloader : window.location.href = "http://www.codethislab.com/contact-us.html"
+    }
+        ;
     this.clearLocalStorage = function () {
-        s_bStorageAvailable && localStorage.clear();
-    };
+        s_bStorageAvailable && localStorage.clear()
+    }
+        ;
     this.preloaderReady = function () {
         jQuery.getJSON("layouts.json", this.onLoadedJSON);
-        b = !0;
-    };
+        b = !0
+    }
+        ;
     this.soundLoaded = function () {
         d++;
         e.refreshLoader(Math.floor(d / c * 100));
-        d === c && s_oMain._allResourcesLoaded();
-    };
+        d === c && s_oMain._allResourcesLoaded()
+    }
+        ;
     this._initSounds = function () {
         var a = [];
         a.push({
@@ -578,8 +615,9 @@ function CMain(a) {
                 loop: a[b].loop,
                 volume: a[b].volume,
                 onload: s_oMain.soundLoaded
-            });
-    };
+            })
+    }
+        ;
     this._loadImages = function () {
         s_oSpriteLibrary.init(this._onImagesLoaded, this._onAllImagesLoaded, this);
         s_oSpriteLibrary.addSprite("but_play", "./sprites/but_play.png");
@@ -609,60 +647,71 @@ function CMain(a) {
         for (var a = s_oLevelSettings.getLayoutNames(), b = 0; b < a.length; b++)
             s_oSpriteLibrary.addSprite("but_level_" + b, "./sprites/but_level_" + a[b] + ".png");
         c += s_oSpriteLibrary.getNumSprites();
-        s_oSpriteLibrary.loadSprites();
-    };
+        s_oSpriteLibrary.loadSprites()
+    }
+        ;
     this._onImagesLoaded = function () {
         d++;
         e.refreshLoader(Math.floor(d / c * 100));
-        d === c && this._allResourcesLoaded();
-    };
-    this._onAllImagesLoaded = function () { };
+        d === c && this._allResourcesLoaded()
+    }
+        ;
+    this._onAllImagesLoaded = function () { }
+        ;
     this._allResourcesLoaded = function () {
         e.unload();
         try {
-            saveItem("ls_available", "ok");
+            saveItem("ls_available", "ok")
+        } catch (k) {
+            s_bStorageAvailable = !1
         }
-        catch (k) {
-            s_bStorageAvailable = !1;
-        }
-        s_oMain.gotoMenu();
-    };
+        s_oMain.gotoMenu()
+    }
+        ;
     this.onLoadedJSON = function (a) {
         s_oLevelSettings = new CLevelSettings(a);
         !1 !== DISABLE_SOUND_MOBILE && !1 !== s_bMobile || s_oMain._initSounds();
-        s_oMain._loadImages();
-    };
+        s_oMain._loadImages()
+    }
+        ;
     this.stopUpdate = function () {
         b = !1;
         createjs.Ticker.paused = !0;
         $("#block_game").css("display", "block");
-        !1 !== DISABLE_SOUND_MOBILE && !1 !== s_bMobile || Howler.mute(!0);
-    };
+        !1 !== DISABLE_SOUND_MOBILE && !1 !== s_bMobile || Howler.mute(!0)
+    }
+        ;
     this.startUpdate = function () {
         s_iPrevTime = (new Date).getTime();
         b = !0;
         createjs.Ticker.paused = !1;
         $("#block_game").css("display", "none");
-        (!1 === DISABLE_SOUND_MOBILE || !1 === s_bMobile) && s_bAudioActive && Howler.mute(!1);
-    };
+        (!1 === DISABLE_SOUND_MOBILE || !1 === s_bMobile) && s_bAudioActive && Howler.mute(!1)
+    }
+        ;
     this.gotoMenu = function () {
         new CMenu;
-        g = STATE_MENU;
-    };
+        g = STATE_MENU
+    }
+        ;
     this.gotoLevelMenu = function () {
-        new CLevelMenu;
-    };
+        new CLevelMenu
+    }
+        ;
     this.gotoGame = function (a, b) {
         f = new CGame(a, b);
-        g = STATE_GAME;
-    };
+        g = STATE_GAME
+    }
+        ;
     this.gotoHelp = function () {
         new CHelp();
-        g = STATE_HELP;
-    };
+        g = STATE_HELP
+    }
+        ;
     this.levelSelected = function (a, b) {
-        this.gotoGame(a, b);
-    };
+        this.gotoGame(a, b)
+    }
+        ;
     this._update = function (a) {
         if (!1 !== b) {
             var c = (new Date).getTime();
@@ -674,15 +723,16 @@ function CMain(a) {
                 s_iCntTime -= 1E3,
                 s_iCntFps = 0);
             g === STATE_GAME && f.update();
-            void 0 !== s_oStage && s_oStage.update(a);
+            void 0 !== s_oStage && s_oStage.update(a)
         }
-    };
+    }
+        ;
     s_oMain = this;
     BONUS_TIME = a.bonus_time;
     HINT_PENALTY = a.hint_penalty;
     ENABLE_FULLSCREEN = a.fullscreen;
     ENABLE_CHECK_ORIENTATION = a.check_orientation;
-    this.initContainer();
+    this.initContainer()
 }
 var s_bMobile, s_bAudioActive = !0, s_iCntTime = 0, s_iTimeElaps = 0, s_iPrevTime = 0, s_iCntFps = 0, s_iCurFps = 0, s_oSoundTrack = null, s_oStage, s_oMain = null, s_oSpriteLibrary, s_oLevelSettings, s_bFullscreen = !1, s_bStorageAvailable = !0, s_aSounds;
 function CTextButton(a, b, d, c, g, e, f, k) {
@@ -715,71 +765,87 @@ function CTextButton(a, b, d, c, g, e, f, k) {
         l.cursor = "pointer";
         l.addChild(q, p, y);
         u.addChild(l);
-        this._initListener();
-    };
+        this._initListener()
+    }
+        ;
     this.unload = function () {
         l.off("mousedown", w);
         l.off("pressup", t);
-        u.removeChild(l);
-    };
+        u.removeChild(l)
+    }
+        ;
     this.setVisible = function (a) {
-        l.visible = a;
-    };
+        l.visible = a
+    }
+        ;
     this.enable = function () {
         h = !1;
         q.filters = [];
-        q.cache(0, 0, m, r);
-    };
+        q.cache(0, 0, m, r)
+    }
+        ;
     this.disable = function () {
         h = !0;
         var a = (new createjs.ColorMatrix).adjustSaturation(-100);
         q.filters = [new createjs.ColorMatrixFilter(a)];
-        q.cache(0, 0, m, r);
-    };
+        q.cache(0, 0, m, r)
+    }
+        ;
     this._initListener = function () {
         w = l.on("mousedown", this.buttonDown);
-        t = l.on("pressup", this.buttonRelease);
-    };
+        t = l.on("pressup", this.buttonRelease)
+    }
+        ;
     this.addEventListener = function (a, c, b) {
         x[a] = c;
-        n[a] = b;
-    };
+        n[a] = b
+    }
+        ;
     this.buttonRelease = function () {
         h || (playSound("click", 1, !1),
             l.scaleX = 1,
             l.scaleY = 1,
-            x[ON_MOUSE_UP] && x[ON_MOUSE_UP].call(n[ON_MOUSE_UP]));
-    };
+            x[ON_MOUSE_UP] && x[ON_MOUSE_UP].call(n[ON_MOUSE_UP]))
+    }
+        ;
     this.buttonDown = function () {
         h || (l.scaleX = .9,
             l.scaleY = .9,
-            x[ON_MOUSE_DOWN] && x[ON_MOUSE_DOWN].call(n[ON_MOUSE_DOWN]));
-    };
+            x[ON_MOUSE_DOWN] && x[ON_MOUSE_DOWN].call(n[ON_MOUSE_DOWN]))
+    }
+        ;
     this.setPosition = function (a, c) {
         l.x = a;
-        l.y = c;
-    };
+        l.y = c
+    }
+        ;
     this.changeText = function (a) {
         y.text = a;
-        p.text = a;
-    };
+        p.text = a
+    }
+        ;
     this.setX = function (a) {
-        l.x = a;
-    };
+        l.x = a
+    }
+        ;
     this.setY = function (a) {
-        l.y = a;
-    };
+        l.y = a
+    }
+        ;
     this.getButtonImage = function () {
-        return l;
-    };
+        return l
+    }
+        ;
     this.getX = function () {
-        return l.x;
-    };
+        return l.x
+    }
+        ;
     this.getY = function () {
-        return l.y;
-    };
+        return l.y
+    }
+        ;
     this._init(a, b, d, c, g, e, f, k);
-    return this;
+    return this
 }
 function CGfxButton(a, b, d, c) {
     var g, e, f = [], k, h, m;
@@ -793,62 +859,76 @@ function CGfxButton(a, b, d, c) {
         k.regY = b.height / 2;
         k.cursor = "pointer";
         r.addChild(k);
-        this._initListener();
-    };
+        this._initListener()
+    }
+        ;
     this.unload = function () {
         k.off("mousedown", h);
         k.off("pressup", m);
-        r.removeChild(k);
-    };
+        r.removeChild(k)
+    }
+        ;
     this.setVisible = function (a) {
-        k.visible = a;
-    };
+        k.visible = a
+    }
+        ;
     this._initListener = function () {
         h = k.on("mousedown", this.buttonDown);
-        m = k.on("pressup", this.buttonRelease);
-    };
+        m = k.on("pressup", this.buttonRelease)
+    }
+        ;
     this.addEventListener = function (a, c, b) {
         g[a] = c;
-        e[a] = b;
-    };
+        e[a] = b
+    }
+        ;
     this.addEventListenerWithParams = function (a, c, b, d) {
         g[a] = c;
         e[a] = b;
-        f = d;
-    };
+        f = d
+    }
+        ;
     this.buttonRelease = function () {
         playSound("click", 1, !1);
         k.scaleX = 1;
         k.scaleY = 1;
-        g[ON_MOUSE_UP] && g[ON_MOUSE_UP].call(e[ON_MOUSE_UP], f);
-    };
+        g[ON_MOUSE_UP] && g[ON_MOUSE_UP].call(e[ON_MOUSE_UP], f)
+    }
+        ;
     this.buttonDown = function () {
         k.scaleX = .9;
         k.scaleY = .9;
-        g[ON_MOUSE_DOWN] && g[ON_MOUSE_DOWN].call(e[ON_MOUSE_DOWN], f);
-    };
+        g[ON_MOUSE_DOWN] && g[ON_MOUSE_DOWN].call(e[ON_MOUSE_DOWN], f)
+    }
+        ;
     this.setPosition = function (a, c) {
         k.x = a;
-        k.y = c;
-    };
+        k.y = c
+    }
+        ;
     this.setX = function (a) {
-        k.x = a;
-    };
+        k.x = a
+    }
+        ;
     this.setY = function (a) {
-        k.y = a;
-    };
+        k.y = a
+    }
+        ;
     this.getButtonImage = function () {
-        return k;
-    };
+        return k
+    }
+        ;
     this.getX = function () {
-        return k.x;
-    };
+        return k.x
+    }
+        ;
     this.getY = function () {
-        return k.y;
-    };
+        return k.y
+    }
+        ;
     var r = c;
     this._init(a, b, d);
-    return this;
+    return this
 }
 function CToggle(a, b, d, c, g) {
     var e, f, k, h, m, r;
@@ -875,43 +955,51 @@ function CToggle(a, b, d, c, g) {
         h.stop();
         h.cursor = "pointer";
         g.addChild(h);
-        this._initListener();
-    };
+        this._initListener()
+    }
+        ;
     this.unload = function () {
         h.off("mousedown", m);
         h.off("pressup", r);
-        g.removeChild(h);
-    };
+        g.removeChild(h)
+    }
+        ;
     this._initListener = function () {
         m = h.on("mousedown", this.buttonDown);
-        r = h.on("pressup", this.buttonRelease);
-    };
+        r = h.on("pressup", this.buttonRelease)
+    }
+        ;
     this.addEventListener = function (a, b, c) {
         f[a] = b;
-        k[a] = c;
-    };
+        k[a] = c
+    }
+        ;
     this.setActive = function (a) {
         e = a;
-        h.gotoAndStop("state_" + e);
-    };
+        h.gotoAndStop("state_" + e)
+    }
+        ;
     this.buttonRelease = function () {
         h.scaleX = 1;
         h.scaleY = 1;
         playSound("click", 1, !1);
         e = !e;
         h.gotoAndStop("state_" + e);
-        f[ON_MOUSE_UP] && f[ON_MOUSE_UP].call(k[ON_MOUSE_UP], e);
-    };
+        f[ON_MOUSE_UP] && f[ON_MOUSE_UP].call(k[ON_MOUSE_UP], e)
+    }
+        ;
     this.buttonDown = function () {
         h.scaleX = .9;
         h.scaleY = .9;
-        f[ON_MOUSE_DOWN] && f[ON_MOUSE_DOWN].call(k[ON_MOUSE_DOWN]);
-    };
+        f[ON_MOUSE_DOWN] && f[ON_MOUSE_DOWN].call(k[ON_MOUSE_DOWN])
+    }
+        ;
     this.setPosition = function (a, b) {
         h.x = a;
-        h.y = b;
-    };
-    this._init(a, b, d, c);
+        h.y = b
+    }
+        ;
+    this._init(a, b, d, c)
 }
 function CMenu() {
     var a, b, d, c, g, e, f, k, h, m, r, x, n = null, l = null;
@@ -925,7 +1013,7 @@ function CMenu() {
             g = CANVAS_WIDTH - q.height / 2 - 10;
             e = q.height / 2 + 10;
             h = new CToggle(g, e, q, s_bAudioActive, s_oStage);
-            h.addEventListener(ON_MOUSE_UP, this._onAudioToggle, this);
+            h.addEventListener(ON_MOUSE_UP, this._onAudioToggle, this)
         }
         q = s_oSpriteLibrary.getSprite("but_credits");
         d = q.height / 2 + 10;
@@ -949,10 +1037,11 @@ function CMenu() {
         createjs.Tween.get(r).to({
             alpha: 0
         }, 400).call(function () {
-            r.visible = !1;
+            r.visible = !1
         });
-        this.refreshButtonPos(s_iOffsetX, s_iOffsetY);
-    };
+        this.refreshButtonPos(s_iOffsetX, s_iOffsetY)
+    }
+        ;
     this.unload = function () {
         k.unload();
         k = null;
@@ -964,37 +1053,45 @@ function CMenu() {
         s_oStage.removeChild(f);
         f = null;
         s_oStage.removeChild(r);
-        s_oMenu = r = null;
-    };
+        s_oMenu = r = null
+    }
+        ;
     this.refreshButtonPos = function (f, k) {
         !1 !== DISABLE_SOUND_MOBILE && !1 !== s_bMobile || h.setPosition(g - f, k + e);
         n && !1 === inIframe() && x.setPosition(a + f, b + k);
-        m.setPosition(d + f, c + k);
-    };
+        m.setPosition(d + f, c + k)
+    }
+        ;
     this._exitFromMenu = function () {
         this.unload();
         s_oMain.gotoLevelMenu();
-        $(s_oMain).trigger("start_session");
-    };
+        $(s_oMain).trigger("start_session")
+    }
+        ;
     this._onButPlayRelease = function () {
-        s_oMenu._exitFromMenu();
-    };
+        s_oMenu._exitFromMenu()
+    }
+        ;
     this._onButCreditsRelease = function () {
-        new CCreditsPanel;
-    };
+        new CCreditsPanel
+    }
+        ;
     this._onAudioToggle = function () {
         Howler.mute(s_bAudioActive);
-        s_bAudioActive = !s_bAudioActive;
-    };
+        s_bAudioActive = !s_bAudioActive
+    }
+        ;
     this.resetFullscreenBut = function () {
-        n && window.document.webkitFullscreenEnabled && x.setActive(s_bFullscreen);
-    };
+        n && window.document.webkitFullscreenEnabled && x.setActive(s_bFullscreen)
+    }
+        ;
     this._onFullscreenRelease = function () {
         s_bFullscreen ? l.call(window.document) : n.call(window.document.documentElement);
-        sizeHandler();
-    };
+        sizeHandler()
+    }
+        ;
     s_oMenu = this;
-    this._init();
+    this._init()
 }
 var s_oMenu = null;
 function CGame(a, b) {
@@ -1007,14 +1104,16 @@ function CGame(a, b) {
         this.createLayout();
         B = new CInterface(0);
         this._setTiles();
-        this.refreshButtonPos(s_iOffsetX, s_iOffsetY);
-    };
+        this.refreshButtonPos(s_iOffsetX, s_iOffsetY)
+    }
+        ;
     this.unload = function () {
         d = !1;
         B.unload();
         s_oStage.removeAllChildren();
-        s_oGame = null;
-    };
+        s_oGame = null
+    }
+        ;
     this.reset = function () {
         m = c = 0;
         k = BONUS_TIME;
@@ -1024,22 +1123,29 @@ function CGame(a, b) {
         this._storeSelectableTiles();
         B.reset();
         $(s_oMain).trigger("start_level", b);
-        d = !0;
-    };
+        d = !0
+    }
+        ;
     this.refreshButtonPos = function (a, b) {
         C.x = p.x + a;
-        B.refreshButtonPos(a, b);
-    };
+        B.refreshButtonPos(a, b)
+    }
+        ;
     this.stopUpdate = function () {
-        d = !1;
-    };
+        d = !1
+    }
+        ;
     this.startUpdate = function () {
-        d = !0;
-    };
+        d = !0
+    }
+        ;
     this.createLayout = function () {
         y = s_oLevelSettings.getLayoutInfos(g);
         p = y.layout_pos;
-        var a = y.pos, b = y.blocks, c = y.block_list, d = y.heights;
+        var a = y.pos
+            , b = y.blocks
+            , c = y.block_list
+            , d = y.heights;
         e = SCORE_BONUS_LAYOUT[y.difficulty];
         C = new createjs.Container;
         C.x = p.x;
@@ -1048,21 +1154,23 @@ function CGame(a, b) {
         s_oStage.addChild(C);
         for (var f = 0; f < a.length; f++) {
             var h = new CTile(f, a[f].x, a[f].y, b[f].left_block, b[f].right_block, b[f].up_block, c[f], d[f], C);
-            n[f] = h;
+            n[f] = h
         }
-    };
+    }
+        ;
     this._setTiles = function () {
         do {
             for (var a = s_oLevelSettings.getShuffledTiles(), b = 0; b < n.length; b++)
                 n[b].setValue(a[b]);
-            this.reset();
-        } while (0 === q.length);
-        B.setHintNum(q.length);
-    };
+            this.reset()
+        } while (0 === q.length); B.setHintNum(q.length)
+    }
+        ;
     this._unloadAllTiles = function () {
         for (var a = 0; a < n.length; a++)
-            n[a].unload();
-    };
+            n[a].unload()
+    }
+        ;
     this._storeSelectableTiles = function () {
         l = [];
         for (var a = 0; a < n.length; a++)
@@ -1074,30 +1182,35 @@ function CGame(a, b) {
                     first: b,
                     second: l[c]
                 });
-            a++;
+            a++
         }
-    };
+    }
+        ;
     this.onShuffleBoard = function () {
         u && u.deselect();
         z && z.deselect();
-        var a = s_oLevelSettings.getLayoutInfos(g), b = a.blocks;
+        var a = s_oLevelSettings.getLayoutInfos(g)
+            , b = a.blocks;
         a = a.block_list;
         for (var c = 0; c < n.length; c++)
             n[c].initBlocksArray(b[c].left_block, b[c].right_block, b[c].up_block, a[c]);
         this._setTiles();
-        B.setHintNum(q.length);
-    };
+        B.setHintNum(q.length)
+    }
+        ;
     this.onRestartBoard = function () {
         u && u.deselect();
         z && z.deselect();
-        var a = s_oLevelSettings.getLayoutInfos(g), b = a.blocks;
+        var a = s_oLevelSettings.getLayoutInfos(g)
+            , b = a.blocks;
         a = a.block_list;
         for (var c = 0; c < n.length; c++)
             n[c].initBlocksArray(b[c].left_block, b[c].right_block, b[c].up_block, a[c]);
         this.reset();
         B.setHintNum(q.length);
-        $(s_oMain).trigger("restart_level", x);
-    };
+        $(s_oMain).trigger("restart_level", x)
+    }
+        ;
     this.onHintReleased = function () {
         0 !== q.length && (u && u.deselect(),
             z && z.deselect(),
@@ -1105,13 +1218,14 @@ function CGame(a, b) {
             z = q[m].second,
             u.showHint(),
             z.showHint(),
-            m++,
+            m++ ,
             m === q.length && (m = 0),
             k = 0,
             c -= HINT_PENALTY,
             0 > c && (c = 0),
-            B.setScore(c));
-    };
+            B.setScore(c))
+    }
+        ;
     this.removeHint = function () {
         null !== u && null !== z && (this._checkForSimilarBlock(u),
             u.disable(),
@@ -1119,27 +1233,31 @@ function CGame(a, b) {
             z.disable(),
             playSound("matching", 1, !1),
             z = u = null,
-            m = 0);
-    };
+            m = 0)
+    }
+        ;
     this.onTileRemoved = function (a) {
         h--;
         f--;
         0 === f && (this._storeSelectableTiles(),
             B.setHintNum(q.length),
             0 === h ? this._win() : 0 === q.length && this._gameOver(),
-            f = 2);
-    };
+            f = 2)
+    }
+        ;
     this.onTileSelected = function (a) {
         null !== u && (u.deselect(),
             u = null);
         null !== z && (z.deselect(),
             z = null);
         null === w ? w = n[a] : (t = n[a],
-            this._checkTileMatching());
-    };
+            this._checkTileMatching())
+    }
+        ;
     this.onTileDeselected = function () {
-        w = null;
-    };
+        w = null
+    }
+        ;
     this._checkTileMatching = function () {
         w.getValue() === t.getValue() ? (this._checkForSimilarBlock(w),
             w.remove(),
@@ -1148,28 +1266,32 @@ function CGame(a, b) {
             m = 0,
             this._calculateScore(),
             playSound("matching", 1, !1)) : (w.deselect(),
-            t.deselect());
-        t = w = null;
-    };
+                t.deselect());
+        t = w = null
+    }
+        ;
     this._checkForSimilarBlock = function (a) {
         for (var b = a.getBlockList(), c = 0; c < b.length; c++)
-            n[b[c].tile].removeBlock(a.getIndex());
-    };
+            n[b[c].tile].removeBlock(a.getIndex())
+    }
+        ;
     this._calculateScore = function () {
         var a = Math.floor(k / 100);
         0 < a && B.showBonusScore(C.x + t.getX() * r, C.y + t.getY() * r, a);
         c += e * a;
         B.setScore(c);
-        k = BONUS_TIME;
-    };
+        k = BONUS_TIME
+    }
+        ;
     this._gameOver = function () {
         d = !1;
         var a = getItem("md_best_score_" + g);
         (null === a || a < c) && saveItem("md_best_score_" + g, c);
         B.gameOver(c);
         playSound("game_over", 1, !1);
-        $(s_oMain).trigger("end_level", x);
-    };
+        $(s_oMain).trigger("end_level", x)
+    }
+        ;
     this._win = function () {
         d = !1;
         var a = getItem("md_best_score_" + g);
@@ -1178,20 +1300,23 @@ function CGame(a, b) {
                 a = c;
         B.win(c, a);
         playSound("win", 1, !1);
-        $(s_oMain).trigger("end_level", x);
-    };
+        $(s_oMain).trigger("end_level", x)
+    }
+        ;
     this.onExit = function () {
         this.unload();
         s_oMain.gotoMenu();
-        $(s_oMain).trigger("end_session");
-    };
+        $(s_oMain).trigger("end_session")
+    }
+        ;
     this.update = function () {
         !1 !== d && (k -= s_iTimeElaps,
             0 > k && (k = 0),
-            B.refreshTime(k));
-    };
+            B.refreshTime(k))
+    }
+        ;
     s_oGame = this;
-    this._init(a, b);
+    this._init(a, b)
 }
 var s_oGame = null;
 function CInterface(a) {
@@ -1223,7 +1348,7 @@ function CInterface(a) {
             A.addEventListener(ON_MOUSE_UP, this._onAudioToggle, this),
             m = p - a.width / 2,
             r = y) : (m = u.getX() - a.width,
-            r = a.height / 2 + 4);
+                r = a.height / 2 + 4);
         a = window.document;
         var H = a.documentElement;
         F = H.requestFullscreen || H.mozRequestFullScreen || H.webkitRequestFullScreen || H.msRequestFullscreen;
@@ -1251,8 +1376,9 @@ function CInterface(a) {
         v.addEventListener(ON_RELEASE_NO, this._onReleaseNoMsgBox, this);
         v.addEventListener(ON_RELEASE_YES, this._onReleaseYesMsgBox, this);
         G = new CWinPanel;
-        D = new CGameOverPanel;
-    };
+        D = new CGameOverPanel
+    }
+        ;
     this.unload = function () {
         u.unload();
         u = null;
@@ -1262,8 +1388,9 @@ function CInterface(a) {
         G.unload();
         D.unload();
         v.unload();
-        s_oInterface = null;
-    };
+        s_oInterface = null
+    }
+        ;
     this.refreshButtonPos = function (a, v) {
         t.x = l + a;
         t.y = q + v;
@@ -1274,32 +1401,41 @@ function CInterface(a) {
         C.setPosition(e - a, f - v);
         u.setPosition(c - a, g + v);
         !1 !== DISABLE_SOUND_MOBILE && !1 !== s_bMobile || A.setPosition(p - a, v + y);
-        F && !1 === inIframe() && E.setPosition(m - a, r + v);
-    };
+        F && !1 === inIframe() && E.setPosition(m - a, r + v)
+    }
+        ;
     this.reset = function () {
-        t.text = TEXT_SCORE + " 0";
-    };
+        t.text = TEXT_SCORE + " 0"
+    }
+        ;
     this.refreshTime = function (a) {
-        w.text = TEXT_BONUS_TIME + " " + a;
-    };
+        w.text = TEXT_BONUS_TIME + " " + a
+    }
+        ;
     this.setScore = function (a) {
-        t.text = TEXT_SCORE + " " + a;
-    };
+        t.text = TEXT_SCORE + " " + a
+    }
+        ;
     this.setHintNum = function (a) {
-        z.setText(a);
-    };
+        z.setText(a)
+    }
+        ;
     this.showBonusScore = function (a, b, c) {
-        new CScoreText(a, b, c);
-    };
+        new CScoreText(a, b, c)
+    }
+        ;
     this.gameOver = function (a) {
-        D.show(a);
-    };
+        D.show(a)
+    }
+        ;
     this.win = function (a, b) {
-        G.show(a, b);
-    };
+        G.show(a, b)
+    }
+        ;
     this.refreshScore = function (a) {
-        t.text = TEXT_SCORE + " " + a;
-    };
+        t.text = TEXT_SCORE + " " + a
+    }
+        ;
     this._onReleaseYesMsgBox = function (a) {
         switch (a) {
             case ALERT_FROM_EXIT:
@@ -1311,41 +1447,50 @@ function CInterface(a) {
                 break;
             case ALERT_FROM_SHUFFLE:
                 v.hide(),
-                    s_oGame.onShuffleBoard();
+                    s_oGame.onShuffleBoard()
         }
-    };
+    }
+        ;
     this._onReleaseNoMsgBox = function () {
-        s_oGame.startUpdate();
-    };
+        s_oGame.startUpdate()
+    }
+        ;
     this._onShuffle = function () {
         s_oGame.stopUpdate();
-        v.show(TEXT_ALERT_SHUFFLE, ALERT_FROM_SHUFFLE);
-    };
+        v.show(TEXT_ALERT_SHUFFLE, ALERT_FROM_SHUFFLE)
+    }
+        ;
     this._onRestart = function () {
         s_oGame.stopUpdate();
-        v.show(TEXT_ALERT_RESTART, ALERT_FROM_RESTART);
-    };
+        v.show(TEXT_ALERT_RESTART, ALERT_FROM_RESTART)
+    }
+        ;
     this._onHint = function () {
-        s_oGame.onHintReleased();
-    };
+        s_oGame.onHintReleased()
+    }
+        ;
     this._onExit = function () {
         s_oGame.stopUpdate();
-        v.show(TEXT_ALERT_EXIT, ALERT_FROM_EXIT);
-    };
+        v.show(TEXT_ALERT_EXIT, ALERT_FROM_EXIT)
+    }
+        ;
     this._onAudioToggle = function () {
         Howler.mute(s_bAudioActive);
-        s_bAudioActive = !s_bAudioActive;
-    };
+        s_bAudioActive = !s_bAudioActive
+    }
+        ;
     this.resetFullscreenBut = function () {
-        F && window.document.webkitFullscreenEnabled && E.setActive(s_bFullscreen);
-    };
+        F && window.document.webkitFullscreenEnabled && E.setActive(s_bFullscreen)
+    }
+        ;
     this._onFullscreenRelease = function () {
         s_bFullscreen ? I.call(window.document) : F.call(window.document.documentElement);
-        sizeHandler();
-    };
+        sizeHandler()
+    }
+        ;
     s_oInterface = this;
     this._init(a);
-    return this;
+    return this
 }
 var s_oInterface = null;
 function CWinPanel() {
@@ -1382,13 +1527,15 @@ function CWinPanel() {
         d = new CTextButton(CANVAS_WIDTH / 2 - 140, CANVAS_HEIGHT / 2 + 100, s_oSpriteLibrary.getSprite("but_generic_small"), TEXT_EXIT, FONT_GAME, "#d7d5d2", 20, e);
         d.addEventListener(ON_MOUSE_UP, this._onExit, this);
         c = new CTextButton(CANVAS_WIDTH / 2 + 140, CANVAS_HEIGHT / 2 + 100, s_oSpriteLibrary.getSprite("but_generic_small"), TEXT_SHUFFLE, FONT_GAME, "#d7d5d2", 20, e);
-        c.addEventListener(ON_MOUSE_UP, this._onShuffle, this);
-    };
+        c.addEventListener(ON_MOUSE_UP, this._onShuffle, this)
+    }
+        ;
     this.unload = function () {
         d.unload();
         c.unload();
-        e.off("click", g);
-    };
+        e.off("click", g)
+    }
+        ;
     this.show = function (c, d) {
         a.text = TEXT_FINAL_SCORE + ": " + c;
         b.text = TEXT_BEST_SCORE + ": " + d;
@@ -1397,28 +1544,31 @@ function CWinPanel() {
         createjs.Tween.get(e).to({
             alpha: 1
         }, 500, createjs.Ease.cubicOut).call(function () {
-            $(s_oMain).trigger("show_interlevel_ad");
+            $(s_oMain).trigger("show_interlevel_ad")
         });
         $(s_oMain).trigger("save_score", c);
-        $(s_oMain).trigger("share_event", c);
-    };
+        $(s_oMain).trigger("share_event", c)
+    }
+        ;
     this._onShuffle = function () {
         createjs.Tween.get(e).to({
             alpha: 0
         }, 500, createjs.Ease.cubicOut).call(function () {
             e.visible = !1;
-            s_oGame.onShuffleBoard();
-        });
-    };
+            s_oGame.onShuffleBoard()
+        })
+    }
+        ;
     this._onExit = function () {
         createjs.Tween.get(e).to({
             alpha: 0
         }, 500, createjs.Ease.cubicOut).call(function () {
             e.visible = !1;
-            s_oMain.gotoMenu();
-        });
-    };
-    this.init();
+            s_oMain.gotoMenu()
+        })
+    }
+        ;
+    this.init()
 }
 function CGameOverPanel() {
     var a, b, d, c, g, e;
@@ -1452,14 +1602,16 @@ function CGameOverPanel() {
         c = new CTextButton(CANVAS_WIDTH / 2, d.getY() - f.height, f, TEXT_RESTART, FONT_GAME, "#d7d5d2", 20, e);
         c.addEventListener(ON_MOUSE_UP, this._onRestart, this);
         b = new CTextButton(CANVAS_WIDTH / 2, c.getY() - f.height, f, TEXT_EXIT, FONT_GAME, "#d7d5d2", 20, e);
-        b.addEventListener(ON_MOUSE_UP, this._onExit, this);
-    };
+        b.addEventListener(ON_MOUSE_UP, this._onExit, this)
+    }
+        ;
     this.unload = function () {
         b.unload();
         d.unload();
         c.unload();
-        e.off("click", g);
-    };
+        e.off("click", g)
+    }
+        ;
     this.show = function (b) {
         a.text = TEXT_FINAL_SCORE + ": " + b;
         e.alpha = 0;
@@ -1467,32 +1619,36 @@ function CGameOverPanel() {
         createjs.Tween.get(e).to({
             alpha: 1
         }, 500, createjs.Ease.cubicOut).call(function () {
-            $(s_oMain).trigger("show_interlevel_ad");
+            $(s_oMain).trigger("show_interlevel_ad")
         });
         $(s_oMain).trigger("save_score", b);
-        $(s_oMain).trigger("share_event", b);
-    };
+        $(s_oMain).trigger("share_event", b)
+    }
+        ;
     this._onShuffle = function () {
         s_oGame.onShuffleBoard();
         createjs.Tween.get(e).to({
             alpha: 0
         }, 500, createjs.Ease.cubicOut).call(function () {
-            e.visible = !1;
-        });
-    };
+            e.visible = !1
+        })
+    }
+        ;
     this._onExit = function () {
         e.visible = !1;
-        s_oMain.gotoMenu();
-    };
+        s_oMain.gotoMenu()
+    }
+        ;
     this._onRestart = function () {
         s_oGame.onRestartBoard();
         createjs.Tween.get(e).to({
             alpha: 0
         }, 500, createjs.Ease.cubicOut).call(function () {
-            e.visible = !1;
-        });
-    };
-    this.init();
+            e.visible = !1
+        })
+    }
+        ;
+    this.init()
 }
 function CLevelSettings(a) {
     var b, d, c, g;
@@ -1504,18 +1660,22 @@ function CLevelSettings(a) {
         for (a = 0; a < NUM_LEVELS; a++)
             b[a] = g[a],
                 c[a] = b[a].label;
-        d = "circle1 circle1 circle1 circle1 circle2 circle2 circle2 circle2 circle3 circle3 circle3 circle3 circle4 circle4 circle4 circle4 circle5 circle5 circle5 circle5 circle6 circle6 circle6 circle6 circle7 circle7 circle7 circle7 circle8 circle8 circle8 circle8 circle9 circle9 circle9 circle9 bamboo1 bamboo1 bamboo1 bamboo1 bamboo2 bamboo2 bamboo2 bamboo2 bamboo3 bamboo3 bamboo3 bamboo3 bamboo4 bamboo4 bamboo4 bamboo4 bamboo5 bamboo5 bamboo5 bamboo5 bamboo6 bamboo6 bamboo6 bamboo6 bamboo7 bamboo7 bamboo7 bamboo7 bamboo8 bamboo8 bamboo8 bamboo8 bamboo9 bamboo9 bamboo9 bamboo9 characters1 characters1 characters1 characters1 characters2 characters2 characters2 characters2 characters3 characters3 characters3 characters3 characters4 characters4 characters4 characters4 characters5 characters5 characters5 characters5 characters6 characters6 characters6 characters6 characters7 characters7 characters7 characters7 characters8 characters8 characters8 characters8 characters9 characters9 characters9 characters9 wind1 wind1 wind1 wind1 wind2 wind2 wind2 wind2 wind3 wind3 wind3 wind3 wind4 wind4 wind4 wind4 dragon1 dragon1 dragon1 dragon1 dragon2 dragon2 dragon2 dragon2 dragon3 dragon3 dragon3 dragon3 flower1 flower2 flower3 flower4 season1 season2 season3 season4".split(" ");
-    };
+        d = "circle1 circle1 circle1 circle1 circle2 circle2 circle2 circle2 circle3 circle3 circle3 circle3 circle4 circle4 circle4 circle4 circle5 circle5 circle5 circle5 circle6 circle6 circle6 circle6 circle7 circle7 circle7 circle7 circle8 circle8 circle8 circle8 circle9 circle9 circle9 circle9 bamboo1 bamboo1 bamboo1 bamboo1 bamboo2 bamboo2 bamboo2 bamboo2 bamboo3 bamboo3 bamboo3 bamboo3 bamboo4 bamboo4 bamboo4 bamboo4 bamboo5 bamboo5 bamboo5 bamboo5 bamboo6 bamboo6 bamboo6 bamboo6 bamboo7 bamboo7 bamboo7 bamboo7 bamboo8 bamboo8 bamboo8 bamboo8 bamboo9 bamboo9 bamboo9 bamboo9 characters1 characters1 characters1 characters1 characters2 characters2 characters2 characters2 characters3 characters3 characters3 characters3 characters4 characters4 characters4 characters4 characters5 characters5 characters5 characters5 characters6 characters6 characters6 characters6 characters7 characters7 characters7 characters7 characters8 characters8 characters8 characters8 characters9 characters9 characters9 characters9 wind1 wind1 wind1 wind1 wind2 wind2 wind2 wind2 wind3 wind3 wind3 wind3 wind4 wind4 wind4 wind4 dragon1 dragon1 dragon1 dragon1 dragon2 dragon2 dragon2 dragon2 dragon3 dragon3 dragon3 dragon3 flower1 flower2 flower3 flower4 season1 season2 season3 season4".split(" ")
+    }
+        ;
     this.getLayoutInfos = function (a) {
-        return b[a];
-    };
+        return b[a]
+    }
+        ;
     this.getShuffledTiles = function () {
-        return d = shuffle(d);
-    };
+        return d = shuffle(d)
+    }
+        ;
     this.getLayoutNames = function () {
-        return c;
-    };
-    this._init(a);
+        return c
+    }
+        ;
+    this._init(a)
 }
 function CLevelMenu() {
     var a, b, d, c, g, e, f, k, h, m, r, x, n, l, q, p = null, y = null, w, t, u, z, B = null, C = null;
@@ -1523,36 +1683,39 @@ function CLevelMenu() {
         h = 0;
         u = new createjs.Container;
         s_oStage.addChild(u);
+
         {
-            var v_1 = createBitmap(s_oSpriteLibrary.getSprite("bg_menu_level"));
-            u.addChild(v_1);
-            v_1 = s_oSpriteLibrary.getSprite("but_exit");
-            g = CANVAS_WIDTH - v_1.width / 2 - 10;
-            e = v_1.height / 2 + 10;
-            l = new CGfxButton(g, e, v_1, u);
+            let v: any = createBitmap(s_oSpriteLibrary.getSprite("bg_menu_level"));
+            u.addChild(v);
+            v = s_oSpriteLibrary.getSprite("but_exit");
+            g = CANVAS_WIDTH - v.width / 2 - 10;
+            e = v.height / 2 + 10;
+            l = new CGfxButton(g, e, v, u);
             l.addEventListener(ON_MOUSE_UP, this._onExit, this);
-            m = v_1.height;
+            m = v.height;
             if (!1 === DISABLE_SOUND_MOBILE || !1 === s_bMobile)
-                d = l.getX() - v_1.width,
-                    c = v_1.height / 2 + 10,
+                d = l.getX() - v.width,
+                    c = v.height / 2 + 10,
                     q = new CToggle(d, c, s_oSpriteLibrary.getSprite("audio_icon"), s_bAudioActive, s_oStage),
                     q.addEventListener(ON_MOUSE_UP, this._onAudioToggle, this);
+
         }
+
         {
-            var v_2 = window.document;
-            var r_1 = v_2.documentElement;
-            B = r_1.requestFullscreen /* || r.mozRequestFullScreen*/ || r_1.webkitRequestFullScreen; // || r.msRequestFullscreen;
-            C = v_2.exitFullscreen /*|| v.mozCancelFullScreen*/ || v_2.webkitExitFullscreen; // || v.msExitFullscreen;
+            let v = window.document;
+            let r = v.documentElement;
+            B = r.requestFullscreen/* || r.mozRequestFullScreen*/ || r.webkitRequestFullScreen;// || r.msRequestFullscreen;
+            C = v.exitFullscreen /*|| v.mozCancelFullScreen*/ || v.webkitExitFullscreen;// || v.msExitFullscreen;
             !1 === ENABLE_FULLSCREEN && (B = !1);
-            B && !1 === inIframe() && (v_2 = s_oSpriteLibrary.getSprite("but_fullscreen"),
-                a = v_2.width / 4 + 10,
-                b = v_2.height / 2 + 4,
-                z = new CToggle(a, b, v_2, s_bFullscreen, s_oStage),
+            B && !1 === inIframe() && (v = s_oSpriteLibrary.getSprite("but_fullscreen"),
+                a = v.width / 4 + 10,
+                b = v.height / 2 + 4,
+                z = new CToggle(a, b, v, s_bFullscreen, s_oStage),
                 z.addEventListener(ON_MOUSE_UP, this._onFullscreenRelease, this));
             this._checkBoundLimits();
             x = [];
         }
-        var v = Math.floor((CANVAS_WIDTH - 2 * EDGEBOARD_X - 100) / NUM_COLS_PAGE_LEVEL) / 2;
+        let v = Math.floor((CANVAS_WIDTH - 2 * EDGEBOARD_X - 100) / NUM_COLS_PAGE_LEVEL) / 2;
         for (var D = r = 0; D < NUM_COLS_PAGE_LEVEL; D++)
             x.push(r),
                 r += 2 * v;
@@ -1577,10 +1740,11 @@ function CLevelMenu() {
             p = new CGfxButton(CANVAS_WIDTH / 2 + 320, CANVAS_HEIGHT / 2 + 30, s_oSpriteLibrary.getSprite("arrow_right"), u);
             p.addEventListener(ON_MOUSE_UP, this._onRight, this);
             y = new CGfxButton(CANVAS_WIDTH / 2 - 320, CANVAS_HEIGHT / 2 + 30, s_oSpriteLibrary.getSprite("arrow_left"), u);
-            y.addEventListener(ON_MOUSE_UP, this._onLeft, this);
+            y.addEventListener(ON_MOUSE_UP, this._onLeft, this)
         }
-        this.refreshButtonPos(s_iOffsetX, s_iOffsetY);
-    };
+        this.refreshButtonPos(s_iOffsetX, s_iOffsetY)
+    }
+        ;
     this.unload = function () {
         for (var a = 0; a < r.length; a++)
             r[a].unload();
@@ -1590,15 +1754,17 @@ function CLevelMenu() {
         null !== y && (y.unload(),
             p.unload());
         s_oStage.removeChild(u);
-        s_oLevelMenu = null;
-    };
+        s_oLevelMenu = null
+    }
+        ;
     this.refreshButtonPos = function (f, h) {
         t.y = k + h;
         w.y = k + h;
         l.setPosition(g - f, e + h);
         !1 !== DISABLE_SOUND_MOBILE && !1 !== s_bMobile || q.setPosition(d - f, h + c);
-        B && !1 === inIframe() && z.setPosition(a + f, b + h);
-    };
+        B && !1 === inIframe() && z.setPosition(a + f, b + h)
+    }
+        ;
     this._checkBoundLimits = function () {
         for (var a = s_oSpriteLibrary.getSprite("but_level"), b = 0, c = CANVAS_HEIGHT - 2 * EDGEBOARD_Y - 2 * m, d = 0; b < c;)
             b += a.height + 20,
@@ -1609,64 +1775,75 @@ function CLevelMenu() {
         for (a = s_oSpriteLibrary.getSprite("but_level"); c < d;)
             c += a.width / 2 + 5,
                 b++;
-        NUM_COLS_PAGE_LEVEL > b && (NUM_COLS_PAGE_LEVEL = b);
-    };
+        NUM_COLS_PAGE_LEVEL > b && (NUM_COLS_PAGE_LEVEL = b)
+    }
+        ;
     this._createNewLevelPage = function (a, b) {
         var c = new createjs.Container;
         u.addChild(c);
         n.push(c);
         r = [];
         for (var d = 0, e = 0, f = 1, g = !1, h = a; h < b; h++) {
-            var k = s_oLevelSettings.getLayoutInfos(h), l = s_oSpriteLibrary.getSprite("but_level_" + h), m = new CButLevel(x[d] + l.width / 2, e + l.height / 2, l, k.name, k.difficulty, FONT_GAME, "#d7d5d2", 20, c);
+            var k = s_oLevelSettings.getLayoutInfos(h)
+                , l = s_oSpriteLibrary.getSprite("but_level_" + h)
+                , m = new CButLevel(x[d] + l.width / 2, e + l.height / 2, l, k.name, k.difficulty, FONT_GAME, "#d7d5d2", 20, c);
             m.addEventListenerWithParams(ON_MOUSE_UP, this._onButLevelRelease, this, [h, k.name]);
             r.push(m);
             d++;
             if (d === x.length && h < b - 1 && (d = 0,
                 e += l.height + 20,
-                f++,
+                f++ ,
                 f > NUM_ROWS_PAGE_LEVEL)) {
                 g = !0;
-                break;
+                break
             }
         }
         c.x = CANVAS_WIDTH / 2;
         c.y = CANVAS_HEIGHT / 2 + 30;
         c.regX = c.getBounds().width / 2;
         c.regY = c.getBounds().height / 2;
-        g && this._createNewLevelPage(h + 1, b);
-    };
+        g && this._createNewLevelPage(h + 1, b)
+    }
+        ;
     this._onRight = function () {
         n[h].visible = !1;
         h++;
         h >= n.length && (h = 0);
-        n[h].visible = !0;
-    };
+        n[h].visible = !0
+    }
+        ;
     this._onLeft = function () {
         n[h].visible = !1;
         h--;
         0 > h && (h = n.length - 1);
-        n[h].visible = !0;
-    };
+        n[h].visible = !0
+    }
+        ;
     this._onButLevelRelease = function (a) {
         s_oLevelMenu.unload();
-        s_oMain.levelSelected(a[0], a[1]);
-    };
+        s_oMain.levelSelected(a[0], a[1])
+    }
+        ;
     this._onAudioToggle = function () {
         Howler.mute(s_bAudioActive);
-        s_bAudioActive = !s_bAudioActive;
-    };
+        s_bAudioActive = !s_bAudioActive
+    }
+        ;
     this.resetFullscreenBut = function () {
-        B && window.document.webkitFullscreenEnabled && z.setActive(s_bFullscreen);
-    };
+        B && window.document.webkitFullscreenEnabled && z.setActive(s_bFullscreen)
+    }
+        ;
     this._onFullscreenRelease = function () {
         s_bFullscreen ? C.call(window.document) : B.call(window.document.documentElement);
-        sizeHandler();
-    };
+        sizeHandler()
+    }
+        ;
     this._onExit = function () {
-        s_oMain.gotoMenu();
-    };
+        s_oMain.gotoMenu()
+    }
+        ;
     s_oLevelMenu = this;
-    this._init();
+    this._init()
 }
 var s_oLevelMenu = null;
 function CButLevel(a, b, d, c, g, e, f, k, h) {
@@ -1700,77 +1877,94 @@ function CButLevel(a, b, d, c, g, e, f, k, h) {
         t.shadow = new createjs.Shadow("#000000", 2, 2, 4);
         t.y = 30;
         p.addChild(t);
-        this._initListener();
-    };
+        this._initListener()
+    }
+        ;
     this.unload = function () {
         p.off("mousedown");
         p.off("pressup");
-        u.removeChild(p);
-    };
+        u.removeChild(p)
+    }
+        ;
     this.setVisible = function (a) {
-        p.visible = a;
-    };
+        p.visible = a
+    }
+        ;
     this.enable = function () {
         m = !1;
         y.filters = [];
-        y.cache(0, 0, r, x);
-    };
+        y.cache(0, 0, r, x)
+    }
+        ;
     this.disable = function () {
         m = !0;
         var a = (new createjs.ColorMatrix).adjustSaturation(-100);
         y.filters = [new createjs.ColorMatrixFilter(a)];
-        y.cache(0, 0, r, x);
-    };
+        y.cache(0, 0, r, x)
+    }
+        ;
     this._initListener = function () {
         oParent = this;
         p.on("mousedown", this.buttonDown);
-        p.on("pressup", this.buttonRelease);
-    };
+        p.on("pressup", this.buttonRelease)
+    }
+        ;
     this.addEventListener = function (a, c, b) {
         n[a] = c;
-        l[a] = b;
-    };
+        l[a] = b
+    }
+        ;
     this.addEventListenerWithParams = function (a, c, b, d) {
         n[a] = c;
         l[a] = b;
-        q = d;
-    };
+        q = d
+    }
+        ;
     this.buttonRelease = function () {
         m || (playSound("click", 1, !1),
             p.scaleX = 1,
             p.scaleY = 1,
-            n[ON_MOUSE_UP] && n[ON_MOUSE_UP].call(l[ON_MOUSE_UP], q));
-    };
+            n[ON_MOUSE_UP] && n[ON_MOUSE_UP].call(l[ON_MOUSE_UP], q))
+    }
+        ;
     this.buttonDown = function () {
         m || (p.scaleX = .9,
             p.scaleY = .9,
-            n[ON_MOUSE_DOWN] && n[ON_MOUSE_DOWN].call(l[ON_MOUSE_DOWN], q));
-    };
+            n[ON_MOUSE_DOWN] && n[ON_MOUSE_DOWN].call(l[ON_MOUSE_DOWN], q))
+    }
+        ;
     this.setPosition = function (a, c) {
         p.x = a;
-        p.y = c;
-    };
+        p.y = c
+    }
+        ;
     this.changeText = function (a) {
-        w.text = a;
-    };
+        w.text = a
+    }
+        ;
     this.setX = function (a) {
-        p.x = a;
-    };
+        p.x = a
+    }
+        ;
     this.setY = function (a) {
-        p.y = a;
-    };
+        p.y = a
+    }
+        ;
     this.getButtonImage = function () {
-        return p;
-    };
+        return p
+    }
+        ;
     this.getX = function () {
-        return p.x;
-    };
+        return p.x
+    }
+        ;
     this.getY = function () {
-        return p.y;
-    };
+        return p.y
+    }
+        ;
     var u = h;
     this._init(a, b, d, c, g, e, f, k, h);
-    return this;
+    return this
 }
 function CCreditsPanel() {
     var a, b, d, c, g, e, f, k, h;
@@ -1827,19 +2021,23 @@ function CCreditsPanel() {
         createjs.Tween.get(h).to({
             alpha: 1
         }, 600, createjs.Ease.cubicOut);
-        this.refreshButtonPos(s_iOffsetX, s_iOffsetY);
-    };
-    this.refreshButtonPos = function (a, c) { };
+        this.refreshButtonPos(s_iOffsetX, s_iOffsetY)
+    }
+        ;
+    this.refreshButtonPos = function (a, c) { }
+        ;
     this.unload = function () {
         e.off("click", this._onLogoButRelease);
         d.unload();
         d = null;
-        s_oStage.removeChild(h);
-    };
+        s_oStage.removeChild(h)
+    }
+        ;
     this._onLogoButRelease = function () {
-        window.open("http://www.codethislab.com/index.php?&l=en", "_blank");
-    };
-    this._init();
+        window.open("http://www.codethislab.com/index.php?&l=en", "_blank")
+    }
+        ;
+    this._init()
 }
 function CAlertSavingBox(a, b) {
     var d, c, g;
@@ -1847,28 +2045,28 @@ function CAlertSavingBox(a, b) {
         g = new createjs.Container;
         f.addChild(g);
         {
-            var b_1 = new createjs.Shape();
-            b_1.graphics.beginFill("black").drawRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-            b_1.alpha = .5;
-            b_1.on("click", function () { });
-            g.addChild(b_1);
-            b_1 = s_oSpriteLibrary.getSprite("msg_box");
-            var e = createBitmap(b_1);
+            let b: any = new createjs.Shape();
+            b.graphics.beginFill("black").drawRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+            b.alpha = .5;
+            b.on("click", function () { });
+            g.addChild(b);
+            b = s_oSpriteLibrary.getSprite("msg_box");
+            var e = createBitmap(b);
             e.x = .5 * CANVAS_WIDTH;
             e.y = .5 * CANVAS_HEIGHT;
-            e.regX = .5 * b_1.width;
-            e.regY = .5 * b_1.height;
+            e.regX = .5 * b.width;
+            e.regY = .5 * b.height;
             g.addChild(e);
         }
         {
-            var b_2 = new createjs.Text(a, "28px " + FONT_GAME, "#000");
-            b_2.x = CANVAS_WIDTH / 2;
-            b_2.y = 220;
-            b_2.textAlign = "center";
-            b_2.textBaseline = "middle";
-            b_2.lineWidth = 400;
-            b_2.outline = 2;
-            g.addChild(b_2);
+            let b = new createjs.Text(a, "28px " + FONT_GAME, "#000");
+            b.x = CANVAS_WIDTH / 2;
+            b.y = 220;
+            b.textAlign = "center";
+            b.textBaseline = "middle";
+            b.lineWidth = 400;
+            b.outline = 2;
+            g.addChild(b);
         }
         d = new createjs.Text(a, "28px " + FONT_GAME, "#d7d5d2");
         d.x = CANVAS_WIDTH / 2;
@@ -1878,18 +2076,21 @@ function CAlertSavingBox(a, b) {
         d.lineWidth = 400;
         g.addChild(d);
         c = new CGfxButton(CANVAS_WIDTH / 2 + 206, 174, s_oSpriteLibrary.getSprite("but_exit_small"), g);
-        c.addEventListener(ON_MOUSE_UP, this._onButOk, this);
-    };
+        c.addEventListener(ON_MOUSE_UP, this._onButOk, this)
+    }
+        ;
     this._onButOk = function () {
-        e.unload();
-    };
+        e.unload()
+    }
+        ;
     this.unload = function () {
         c.unload();
-        f.removeChild(g);
-    };
+        f.removeChild(g)
+    }
+        ;
     var e = this;
     var f = b;
-    this._init(a);
+    this._init(a)
 }
 function CTile(a, b, d, c, g, e, f, k, h) {
     var m, r, x, n, l, q, p, y, w, t, u, z, B, C, v, G, D, A;
@@ -1965,19 +2166,22 @@ function CTile(a, b, d, c, g, e, f, k, h) {
         this.initBlocksArray(d, e, f, g);
         B = A.on("click", this._onTileSelected);
         s_bMobile || (C = A.on("mouseover", this._onTileOver),
-            v = A.on("mouseout", this._onTileOut));
-    };
+            v = A.on("mouseout", this._onTileOut))
+    }
+        ;
     this.unload = function () {
         A.off("click", B);
         s_bMobile || (A.off("mouseover", C),
             A.off("mouseout", v));
-        F.removeChild(A);
-    };
+        F.removeChild(A)
+    }
+        ;
     this.setValue = function (a) {
         q = a;
         G.gotoAndStop(q);
-        this.assignLabel();
-    };
+        this.assignLabel()
+    }
+        ;
     this.initBlocksArray = function (a, b, c, d) {
         x = !1;
         m = !0;
@@ -1999,17 +2203,20 @@ function CTile(a, b, d, c, g, e, f, k, h) {
         D.visible = !1;
         A.scaleX = A.scaleY = 1;
         A.visible = !0;
-        A.alpha = 1;
-    };
+        A.alpha = 1
+    }
+        ;
     this.assignLabel = function () {
-        p = -1 !== q.indexOf("season") ? "season" : -1 !== q.indexOf("flower") ? "flower" : q;
-    };
+        p = -1 !== q.indexOf("season") ? "season" : -1 !== q.indexOf("flower") ? "flower" : q
+    }
+        ;
     this.deselect = function () {
         createjs.Tween.removeTweens(A);
         D.visible = !1;
         A.alpha = 1;
-        n = x = !1;
-    };
+        n = x = !1
+    }
+        ;
     this.disable = function () {
         n && (n = !1,
             createjs.Tween.removeTweens(A));
@@ -2017,8 +2224,9 @@ function CTile(a, b, d, c, g, e, f, k, h) {
         if (null === s_oGame)
             s_oHelp.onTileRemoved(z);
         else
-            s_oGame.onTileRemoved(z);
-    };
+            s_oGame.onTileRemoved(z)
+    }
+        ;
     this.remove = function () {
         n && (n = !1,
             createjs.Tween.removeTweens(A));
@@ -2027,47 +2235,52 @@ function CTile(a, b, d, c, g, e, f, k, h) {
             scaleX: .1,
             scaleY: .1
         }, 300, createjs.Ease.backIn).call(function () {
-            a.disable();
-        });
-    };
+            a.disable()
+        })
+    }
+        ;
     this.showHint = function () {
         n = !0;
-        this._playHintAnim();
-    };
+        this._playHintAnim()
+    }
+        ;
     this._playHintAnim = function () {
         createjs.Tween.get(A).to({
             alpha: .5
         }, 600, createjs.Ease.cubicOut).to({
             alpha: 1
         }, 600, createjs.Ease.cubicOut).call(function () {
-            E._playHintAnim();
-        });
-    };
+            E._playHintAnim()
+        })
+    }
+        ;
     this._checkIfTileIsFree = function () {
         r = !1;
-        0 === w.length && 0 === u.length ? r = !0 : 0 === t.length && 0 === u.length && (r = !0);
-    };
+        0 === w.length && 0 === u.length ? r = !0 : 0 === t.length && 0 === u.length && (r = !0)
+    }
+        ;
     this.removeBlock = function (a) {
         var b;
         for (b = 0; b < t.length; b++)
             if (t[b] === a) {
                 t.splice(b, 1);
                 this._checkIfTileIsFree();
-                return;
+                return
             }
         for (b = 0; b < w.length; b++)
             if (w[b] === a) {
                 w.splice(b, 1);
                 this._checkIfTileIsFree();
-                return;
+                return
             }
         for (b = 0; b < u.length; b++)
             if (u[b] === a) {
                 u.splice(b, 1);
                 this._checkIfTileIsFree();
-                break;
+                break
             }
-    };
+    }
+        ;
     this._onTileSelected = function () {
         if (n)
             null === s_oGame ? s_oHelp.removeHint() : s_oGame.removeHint();
@@ -2083,39 +2296,49 @@ function CTile(a, b, d, c, g, e, f, k, h) {
                 null === s_oGame)
                 s_oHelp.onTileSelected(l);
             else
-                s_oGame.onTileSelected(l);
-    };
+                s_oGame.onTileSelected(l)
+    }
+        ;
     this._onTileOver = function () {
-        E.isSelectable() && (D.visible = !0);
-    };
+        E.isSelectable() && (D.visible = !0)
+    }
+        ;
     this._onTileOut = function () {
-        !1 === x && (D.visible = !1);
-    };
+        !1 === x && (D.visible = !1)
+    }
+        ;
     this.getValue = function () {
-        return p;
-    };
+        return p
+    }
+        ;
     this.isSelectable = function () {
-        return r && m ? !0 : !1;
-    };
+        return r && m ? !0 : !1
+    }
+        ;
     this.getBlockList = function () {
-        return z;
-    };
+        return z
+    }
+        ;
     this.getHeight = function () {
-        return y;
-    };
+        return y
+    }
+        ;
     this.getIndex = function () {
-        return l;
-    };
+        return l
+    }
+        ;
     this.getX = function () {
-        return A.x;
-    };
+        return A.x
+    }
+        ;
     this.getY = function () {
-        return A.y;
-    };
+        return A.y
+    }
+        ;
     var E = this;
     var F = h;
     this._init(a, b, d, c, g, e, f, k, h);
-    return this;
+    return this
 }
 function CAreYouSurePanel(a) {
     var b, d, c, g, e, f, k, h, m;
@@ -2148,17 +2371,20 @@ function CAreYouSurePanel(a) {
         f = new CGfxButton(CANVAS_WIDTH / 2 + 170, 344, s_oSpriteLibrary.getSprite("but_yes"), m);
         f.addEventListener(ON_MOUSE_UP, this._onReleaseYes, this);
         k = new CGfxButton(CANVAS_WIDTH / 2 - 170, 344, s_oSpriteLibrary.getSprite("but_no"), m);
-        k.addEventListener(ON_MOUSE_UP, this._onReleaseNo, this);
-    };
+        k.addEventListener(ON_MOUSE_UP, this._onReleaseNo, this)
+    }
+        ;
     this.addEventListener = function (a, b, e) {
         d[a] = b;
-        c[a] = e;
-    };
+        c[a] = e
+    }
+        ;
     this.unload = function () {
         m.off("click", h);
         k.unload();
-        f.unload();
-    };
+        f.unload()
+    }
+        ;
     this.show = function (a, c) {
         g.text = a;
         e.text = a;
@@ -2167,20 +2393,24 @@ function CAreYouSurePanel(a) {
         m.alpha = 0;
         createjs.Tween.get(m).to({
             alpha: 1
-        }, 500, createjs.Ease.cubicOut);
-    };
+        }, 500, createjs.Ease.cubicOut)
+    }
+        ;
     this.hide = function () {
-        m.visible = !1;
-    };
+        m.visible = !1
+    }
+        ;
     this._onReleaseYes = function () {
-        d[ON_RELEASE_YES] && d[ON_RELEASE_YES].call(c[ON_RELEASE_YES], b);
-    };
+        d[ON_RELEASE_YES] && d[ON_RELEASE_YES].call(c[ON_RELEASE_YES], b)
+    }
+        ;
     this._onReleaseNo = function () {
         d[ON_RELEASE_NO] && d[ON_RELEASE_NO].call(c[ON_RELEASE_NO], b);
-        m.visible = !1;
-    };
+        m.visible = !1
+    }
+        ;
     var r = a;
-    this._init(a);
+    this._init(a)
 }
 function CScoreText(a, b, d) {
     var c;
@@ -2196,24 +2426,28 @@ function CScoreText(a, b, d) {
         createjs.Tween.get(c).to({
             alpha: 1
         }, 400, createjs.Ease.quadIn).call(function () {
-            e.moveUp();
-        });
-    };
+            e.moveUp()
+        })
+    }
+        ;
     this.moveUp = function () {
-        var a = c.y - 100, b = this;
+        var a = c.y - 100
+            , b = this;
         createjs.Tween.get(c).to({
             y: a
         }, 1E3, createjs.Ease.sineIn).call(function () {
-            b.unload();
+            b.unload()
         });
         createjs.Tween.get(c).wait(500).to({
             alpha: 0
-        }, 500);
-    };
+        }, 500)
+    }
+        ;
     this.unload = function () {
-        s_oStage.removeChild(c);
-    };
-    this._init(a, b, d);
+        s_oStage.removeChild(c)
+    }
+        ;
+    this._init(a, b, d)
 }
 function CButHint(a, b, d, c, g, e, f, k) {
     var h, m, r, x, n, l, q, p, y, w, t;
@@ -2238,120 +2472,147 @@ function CButHint(a, b, d, c, g, e, f, k) {
         l.cursor = "pointer";
         l.addChild(q, p);
         t.addChild(l);
-        this._initListener();
-    };
+        this._initListener()
+    }
+        ;
     this.unload = function () {
         l.off("mousedown", y);
         l.off("pressup", w);
-        t.removeChild(l);
-    };
+        t.removeChild(l)
+    }
+        ;
     this.setVisible = function (a) {
-        l.visible = a;
-    };
+        l.visible = a
+    }
+        ;
     this.enable = function () {
         h = !1;
         q.filters = [];
-        q.cache(0, 0, m, r);
-    };
+        q.cache(0, 0, m, r)
+    }
+        ;
     this.disable = function () {
         h = !0;
         var a = (new createjs.ColorMatrix).adjustSaturation(-100);
         q.filters = [new createjs.ColorMatrixFilter(a)];
-        q.cache(0, 0, m, r);
-    };
+        q.cache(0, 0, m, r)
+    }
+        ;
     this._initListener = function () {
         y = l.on("mousedown", this.buttonDown);
-        w = l.on("pressup", this.buttonRelease);
-    };
+        w = l.on("pressup", this.buttonRelease)
+    }
+        ;
     this.addEventListener = function (a, b, c) {
         x[a] = b;
-        n[a] = c;
-    };
+        n[a] = c
+    }
+        ;
     this.setText = function (a) {
-        p.text = a;
-    };
+        p.text = a
+    }
+        ;
     this.buttonRelease = function () {
         h || (playSound("click", 1, !1),
             l.scaleX = 1,
             l.scaleY = 1,
-            x[ON_MOUSE_UP] && x[ON_MOUSE_UP].call(n[ON_MOUSE_UP]));
-    };
+            x[ON_MOUSE_UP] && x[ON_MOUSE_UP].call(n[ON_MOUSE_UP]))
+    }
+        ;
     this.buttonDown = function () {
         h || (l.scaleX = .9,
             l.scaleY = .9,
-            x[ON_MOUSE_DOWN] && x[ON_MOUSE_DOWN].call(n[ON_MOUSE_DOWN]));
-    };
+            x[ON_MOUSE_DOWN] && x[ON_MOUSE_DOWN].call(n[ON_MOUSE_DOWN]))
+    }
+        ;
     this.setPosition = function (a, b) {
         l.x = a;
-        l.y = b;
-    };
+        l.y = b
+    }
+        ;
     this.setX = function (a) {
-        l.x = a;
-    };
+        l.x = a
+    }
+        ;
     this.setY = function (a) {
-        l.y = a;
-    };
+        l.y = a
+    }
+        ;
     this.getButtonImage = function () {
-        return l;
-    };
+        return l
+    }
+        ;
     this.getX = function () {
-        return l.x;
-    };
+        return l.x
+    }
+        ;
     this.getY = function () {
-        return l.y;
-    };
+        return l.y
+    }
+        ;
     this._init(a, b, d, c, g, e, f, k);
-    return this;
+    return this
 }
 ;
-window.onload = function () {
+
+
+window.onload = () => {
     var oMain = new CMain({
-        fullscreen: true,
-        check_orientation: true,
-        bonus_time: 12000,
-        hint_penalty: 10 //POINT TO DECREASE IF PLAYER USES AN HINT
+        fullscreen: true,       //SET THIS TO FALSE IF YOU DON'T WANT TO SHOW FULLSCREEN BUTTON
+        check_orientation: true,//SET TO FALSE IF YOU DON'T WANT TO SHOW ORIENTATION ALERT ON MOBILE DEVICES
+        bonus_time: 12000,     //SET VALUE (IN MILLISECONDS) FOR BONUS TIME. THE BONUS TIME ASSIGN THE SCORE FOR MATCHING. IF IT IS ZERO, NO SCORE IS ASSIGNED
+        hint_penalty: 10        //POINT TO DECREASE IF PLAYER USES AN HINT
     });
+
+
     $(oMain).on("start_session", function (evt) {
         if (getParamValue('ctl-arcade') === "true") {
             parent.__ctlArcadeStartSession();
         }
         //...ADD YOUR CODE HERE EVENTUALLY
     });
+
     $(oMain).on("end_session", function (evt) {
         if (getParamValue('ctl-arcade') === "true") {
             parent.__ctlArcadeEndSession();
         }
         //...ADD YOUR CODE HERE EVENTUALLY
     });
+
     $(oMain).on("save_score", function (evt, iScore) {
         if (getParamValue('ctl-arcade') === "true") {
             parent.__ctlArcadeSaveScore({ score: iScore });
         }
         //...ADD YOUR CODE HERE EVENTUALLY
     });
+
     $(oMain).on("start_level", function (evt, iLevel) {
         if (getParamValue('ctl-arcade') === "true") {
             parent.__ctlArcadeStartLevel({ level: iLevel });
         }
         //...ADD YOUR CODE HERE EVENTUALLY
     });
+
     $(oMain).on("end_level", function (evt, iLevel) {
         if (getParamValue('ctl-arcade') === "true") {
             parent.__ctlArcadeEndLevel({ level: iLevel });
         }
         //...ADD YOUR CODE HERE EVENTUALLY
     });
+
     $(oMain).on("restart_level", function (evt, iLevel) {
         if (getParamValue('ctl-arcade') === "true") {
             parent.__ctlArcadeRestartLevel({ level: iLevel });
         }
     });
+
     $(oMain).on("show_interlevel_ad", function (evt) {
         if (getParamValue('ctl-arcade') === "true") {
             parent.__ctlArcadeShowInterlevelAD();
         }
         //...ADD YOUR CODE HERE EVENTUALLY
     });
+
     $(oMain).on("share_event", function (evt, iScore) {
         if (getParamValue('ctl-arcade') === "true") {
             parent.__ctlArcadeShareEvent({
@@ -2363,11 +2624,10 @@ window.onload = function () {
         }
         //...ADD YOUR CODE HERE EVENTUALLY
     });
+
     if (isIOS()) {
         setTimeout(function () { sizeHandler(); }, 200);
-    }
-    else {
+    } else {
         sizeHandler();
     }
 };
-//# sourceMappingURL=main.js.map
