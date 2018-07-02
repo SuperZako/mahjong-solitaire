@@ -781,75 +781,78 @@ function CTextButton(a, b, d, c, g, e, f, k) {
     this._init(a, b, d, c, g, e, f, k);
     return this;
 }
-function CGfxButton(a, b, d, c) {
-    var g, e, f = [], k, h, m;
-    this._init = function (a, c, b) {
-        g = [];
-        e = [];
-        k = createBitmap(b);
-        k.x = a;
-        k.y = c;
-        k.regX = b.width / 2;
-        k.regY = b.height / 2;
-        k.cursor = "pointer";
-        r.addChild(k);
+var CGfxButton = /** @class */ (function () {
+    function CGfxButton(a, b, d, c) {
+        var _this = this;
+        this.f = [];
+        this.buttonRelease = function () {
+            playSound("click", 1, !1);
+            _this.k.scaleX = 1;
+            _this.k.scaleY = 1;
+            _this.g[ON_MOUSE_UP] && _this.g[ON_MOUSE_UP].call(_this.e[ON_MOUSE_UP], _this.f);
+        };
+        this.buttonDown = function () {
+            _this.k.scaleX = .9;
+            _this.k.scaleY = .9;
+            _this.g[ON_MOUSE_DOWN] && _this.g[ON_MOUSE_DOWN].call(_this.e[ON_MOUSE_DOWN], _this.f);
+        };
+        this.r = c;
+        this._init(a, b, d);
+    }
+    CGfxButton.prototype._init = function (a, c, b) {
+        this.g = [];
+        this.e = [];
+        this.k = createBitmap(b);
+        this.k.x = a;
+        this.k.y = c;
+        this.k.regX = b.width / 2;
+        this.k.regY = b.height / 2;
+        this.k.cursor = "pointer";
+        this.r.addChild(this.k);
         this._initListener();
     };
-    this.unload = function () {
-        k.off("mousedown", h);
-        k.off("pressup", m);
-        r.removeChild(k);
+    CGfxButton.prototype.unload = function () {
+        this.k.off("mousedown", this.h);
+        this.k.off("pressup", this.m);
+        this.r.removeChild(this.k);
     };
-    this.setVisible = function (a) {
-        k.visible = a;
+    CGfxButton.prototype.setVisible = function (a) {
+        this.k.visible = a;
     };
-    this._initListener = function () {
-        h = k.on("mousedown", this.buttonDown);
-        m = k.on("pressup", this.buttonRelease);
+    CGfxButton.prototype._initListener = function () {
+        this.h = this.k.on("mousedown", this.buttonDown);
+        this.m = this.k.on("pressup", this.buttonRelease);
     };
-    this.addEventListener = function (a, c, b) {
-        g[a] = c;
-        e[a] = b;
+    CGfxButton.prototype.addEventListener = function (a, c, b) {
+        this.g[a] = c;
+        this.e[a] = b;
     };
-    this.addEventListenerWithParams = function (a, c, b, d) {
-        g[a] = c;
-        e[a] = b;
-        f = d;
+    CGfxButton.prototype.addEventListenerWithParams = function (a, c, b, d) {
+        this.g[a] = c;
+        this.e[a] = b;
+        this.f = d;
     };
-    this.buttonRelease = function () {
-        playSound("click", 1, !1);
-        k.scaleX = 1;
-        k.scaleY = 1;
-        g[ON_MOUSE_UP] && g[ON_MOUSE_UP].call(e[ON_MOUSE_UP], f);
+    CGfxButton.prototype.setPosition = function (a, c) {
+        this.k.x = a;
+        this.k.y = c;
     };
-    this.buttonDown = function () {
-        k.scaleX = .9;
-        k.scaleY = .9;
-        g[ON_MOUSE_DOWN] && g[ON_MOUSE_DOWN].call(e[ON_MOUSE_DOWN], f);
+    CGfxButton.prototype.setX = function (a) {
+        this.k.x = a;
     };
-    this.setPosition = function (a, c) {
-        k.x = a;
-        k.y = c;
+    CGfxButton.prototype.setY = function (a) {
+        this.k.y = a;
     };
-    this.setX = function (a) {
-        k.x = a;
+    CGfxButton.prototype.getButtonImage = function () {
+        return this.k;
     };
-    this.setY = function (a) {
-        k.y = a;
+    CGfxButton.prototype.getX = function () {
+        return this.k.x;
     };
-    this.getButtonImage = function () {
-        return k;
+    CGfxButton.prototype.getY = function () {
+        return this.k.y;
     };
-    this.getX = function () {
-        return k.x;
-    };
-    this.getY = function () {
-        return k.y;
-    };
-    var r = c;
-    this._init(a, b, d);
-    return this;
-}
+    return CGfxButton;
+}());
 function CToggle(a, b, d, c, g) {
     var e, f, k, h, m, r;
     this._init = function (a, c, b, d) {

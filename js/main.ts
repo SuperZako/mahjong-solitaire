@@ -847,88 +847,99 @@ function CTextButton(a, b, d, c, g, e, f, k) {
     this._init(a, b, d, c, g, e, f, k);
     return this
 }
-function CGfxButton(a, b, d, c) {
-    var g, e, f = [], k, h, m;
-    this._init = function (a, c, b) {
-        g = [];
-        e = [];
-        k = createBitmap(b);
-        k.x = a;
-        k.y = c;
-        k.regX = b.width / 2;
-        k.regY = b.height / 2;
-        k.cursor = "pointer";
-        r.addChild(k);
+class CGfxButton {
+    g;
+    e;
+    f = [];
+    k;
+    m;
+    r;
+    h;
+    constructor(a, b, d, c) {
+
+
+        this.r = c;
+        this._init(a, b, d);
+    }
+
+
+    _init(a, c, b) {
+        this.g = [];
+        this.e = [];
+        this.k = createBitmap(b);
+        this.k.x = a;
+        this.k.y = c;
+        this.k.regX = b.width / 2;
+        this.k.regY = b.height / 2;
+        this.k.cursor = "pointer";
+        this.r.addChild(this.k);
         this._initListener()
     }
-        ;
-    this.unload = function () {
-        k.off("mousedown", h);
-        k.off("pressup", m);
-        r.removeChild(k)
+
+    unload() {
+        this.k.off("mousedown", this.h);
+        this.k.off("pressup", this.m);
+        this.r.removeChild(this.k)
     }
-        ;
-    this.setVisible = function (a) {
-        k.visible = a
+
+    setVisible(a) {
+        this.k.visible = a
     }
-        ;
-    this._initListener = function () {
-        h = k.on("mousedown", this.buttonDown);
-        m = k.on("pressup", this.buttonRelease)
+
+    _initListener() {
+        this.h = this.k.on("mousedown", this.buttonDown);
+        this.m = this.k.on("pressup", this.buttonRelease)
     }
-        ;
-    this.addEventListener = function (a, c, b) {
-        g[a] = c;
-        e[a] = b
+
+    addEventListener(a, c, b) {
+        this.g[a] = c;
+        this.e[a] = b
     }
-        ;
-    this.addEventListenerWithParams = function (a, c, b, d) {
-        g[a] = c;
-        e[a] = b;
-        f = d
+
+    addEventListenerWithParams(a, c, b, d) {
+        this.g[a] = c;
+        this.e[a] = b;
+        this.f = d
     }
-        ;
-    this.buttonRelease = function () {
+
+    buttonRelease = () => {
         playSound("click", 1, !1);
-        k.scaleX = 1;
-        k.scaleY = 1;
-        g[ON_MOUSE_UP] && g[ON_MOUSE_UP].call(e[ON_MOUSE_UP], f)
+        this.k.scaleX = 1;
+        this.k.scaleY = 1;
+        this.g[ON_MOUSE_UP] && this.g[ON_MOUSE_UP].call(this.e[ON_MOUSE_UP], this.f)
+    };
+
+    buttonDown = () => {
+        this.k.scaleX = .9;
+        this.k.scaleY = .9;
+        this.g[ON_MOUSE_DOWN] && this.g[ON_MOUSE_DOWN].call(this.e[ON_MOUSE_DOWN], this.f)
+    };
+
+    setPosition(a, c) {
+        this.k.x = a;
+        this.k.y = c
     }
-        ;
-    this.buttonDown = function () {
-        k.scaleX = .9;
-        k.scaleY = .9;
-        g[ON_MOUSE_DOWN] && g[ON_MOUSE_DOWN].call(e[ON_MOUSE_DOWN], f)
+
+    setX(a) {
+        this.k.x = a
     }
-        ;
-    this.setPosition = function (a, c) {
-        k.x = a;
-        k.y = c
+
+    setY(a) {
+        this.k.y = a
     }
-        ;
-    this.setX = function (a) {
-        k.x = a
+
+    getButtonImage() {
+        return this.k
     }
-        ;
-    this.setY = function (a) {
-        k.y = a
+
+    getX() {
+        return this.k.x
     }
-        ;
-    this.getButtonImage = function () {
-        return k
+
+    getY() {
+        return this.k.y
     }
-        ;
-    this.getX = function () {
-        return k.x
-    }
-        ;
-    this.getY = function () {
-        return k.y
-    }
-        ;
-    var r = c;
-    this._init(a, b, d);
-    return this
+
 }
 function CToggle(a, b, d, c, g) {
     var e, f, k, h, m, r;
